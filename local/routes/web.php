@@ -4,6 +4,32 @@
 Route::get('/', function () {
     return view('frontend.home.index');
 });
+
+Route::get('/duan-chitiet.html', function () {
+    return view('frontend.product-details.index');
+});
+
+Route::get('/duan.html', function () {
+    return view('frontend.products.index');
+});
+
+Route::get('/tin-tuc.html', function () {
+    return view('frontend.news.index');
+});
+
+Route::get('/tuyen-dung.html', function () {
+    return view('frontend.tuyendung.index');
+});
+
+Route::get('/tin-tuc-chi-tiet.html', function () {
+    return view('frontend.news-details.index');
+});
+
+Route::get('/lien-he.html', function () {
+    return view('frontend.contact.index');
+});
+
+
 Route::post('/tim-kiem','FrontendController@getSearch')->name('search');
 
 

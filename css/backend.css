@@ -1,4 +1,4 @@
-@font-face {
+@import url(https://fonts.googleapis.com/css?family=Archivo|Nunito+Sans|Kanit|Archivo);@font-face {
   font-family: UTMAVO;
   src: url("../fonts/utm-avo.ttf");
 }
@@ -17,7 +17,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  font-family: UTMAVO !important;
+  font-family: "Archivo", sans-serif !important;
 }
 
 blockquote, q {

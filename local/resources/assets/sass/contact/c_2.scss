@@ -1,0 +1,77 @@
+#c_2{
+  background-position: center center;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  h4{
+    font-size: 18px;
+    color: #f68121;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+  p{
+    line-height: 23px;
+    font-size: 16px;
+    /*font-weight: bold;*/
+  }
+  h5{
+    font-size: 20px;
+    color: #f68121;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    font-weight: bold;
+  }
+
+  .line-break-lh{
+    background-color: #f68121;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+    &:after {
+      content: '';
+      position: absolute;
+      width:0px;
+      left: -60px;
+      height:0px;
+      border-bottom:3px solid transparent;
+      border-top:3px solid transparent;
+      border-right:50px solid #f68121; /* Tam giác phải được đổ màu */
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width:0px;
+      height:0px;
+      right: -60px;
+      border-bottom:3px solid transparent;
+      border-top:3px solid transparent;
+      border-left:50px solid #f68121; /* Tam giác trái được đổ màu */
+    }
+  }
+
+
+  #form_lienhe{
+    input{
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      font-size: 15px;
+    }
+
+    textarea{
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 15px;
+    }
+
+    a{
+      background-color: #f68121;
+      padding: 10px 16px 8px 16px;
+      color: white;
+    }
+  }
+}

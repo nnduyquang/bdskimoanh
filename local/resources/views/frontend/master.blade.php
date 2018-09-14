@@ -45,8 +45,8 @@
         }
     });
 </script>
-{{--@yield('scripts')--}}
 {{ Html::script('js/scripts.js') }}
+@yield('jv-scripts')
 <div class="callback d-lg-none d-md-none">
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
@@ -55,7 +55,7 @@
                                                                             aria-hidden="true"></i></a>
     </div>
 </div>
-<div class="callback d-none d-md-block" style="right: 150px;bottom: -30px;left:inherit">
+<div class="callback d-none d-md-block" style="right: 0px;bottom: -10px;left:inherit">
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
         <div class="phone_animation_circle_fill"></div>
@@ -63,10 +63,10 @@
                                                                             aria-hidden="true"></i></a>
     </div>
 </div>
-<div class="mess_desk_bot d-none d-md-block" style="position: fixed;bottom:40px;right: 0px;">
-    <a href="tel:0962599482" style="display: block;width: 260px;height: 56px;background: url({{URL::to('images/nenhot.png')}}) no-repeat;text-align: center;padding-top: 10px;color:#fff;font-size: 20px;font-family: 'roboto-bold'">
-    </a>
-</div>
+{{--<div class="mess_desk_bot d-none d-md-block" style="position: fixed;bottom:40px;right: 0px;">--}}
+    {{--<a href="tel:0962599482" style="display: block;width: 260px;height: 56px;background: url({{URL::to('images/nenhot.png')}}) no-repeat;text-align: center;padding-top: 10px;color:#fff;font-size: 20px;font-family: 'roboto-bold'">--}}
+    {{--</a>--}}
+{{--</div>--}}
 
 
 </body>

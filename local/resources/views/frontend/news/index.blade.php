@@ -18,19 +18,25 @@
     {{ Html::style('css/themes/default/default.css') }}
 @stop
 @section('slider')
-@include('frontend.common.slider')
+    {{--@include('frontend.common.slider')--}}
 @stop
 @section('container')
-    <div class="container-fluid mt-3" id="h_1">
+
+    <div class="container-fluid mt-4" id="n_1">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    @include('frontend.home.h_1')
+                    @include('frontend.news.n_2')
                 </div>
+
                 <div class="col-md-4">
                     @include('frontend.common.r_n_n')
                 </div>
             </div>
         </div>
     </div>
+
+@stop
+
+@section('jv-scripts')
 @stop

@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Archivo|Nunito+Sans|Kanit|Archivo);@charset "UTF-8";
 @font-face {
   font-family: UTMAVO;
   src: url("../fonts/utm-avo.ttf");
@@ -17,7 +18,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  font-family: UTMAVO !important;
+  font-family: "Archivo", sans-serif !important;
 }
 
 blockquote, q {
@@ -553,4 +554,536 @@ This class is added to the container
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
   height: 46px;
+}
+
+#h_1 h4 {
+  font-size: 15px;
+  color: white;
+  background-color: #f68121;
+  padding: 10px 0px 8px 0px;
+  text-align: center;
+  /*font-weight: 600;*/
+  border-radius: 4px 4px 0px 0px;
+  margin-bottom: 20px;
+}
+
+#h_1 .items-duan {
+  margin-bottom: 30px;
+}
+
+#h_1 .items-duan .img-duan {
+  width: 200px;
+  height: 138px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#h_1 .items-duan .tt-duan {
+  padding: 0 26px;
+}
+
+#h_1 .items-duan .tt-duan p {
+  color: #6f6d6b;
+  font-size: 14px;
+  min-width: 24%;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#h_1 .items-duan .tt-duan p.tt-ngaydangtin {
+  margin-top: 6px;
+  width: 100%;
+  text-align: right;
+}
+
+#h_1 .items-duan .tt-duan p.tt-ngaydangtin a {
+  color: #144381;
+}
+
+#h_1 .items-duan h5 {
+  font-family: 'Archivo', sans-serif !important;
+  padding-top: 3px;
+  font-size: 15px;
+  line-height: 20px;
+  padding-bottom: 12px;
+}
+
+#h_1 .items-duan h5 a {
+  color: #007bff;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#h_1 .items-duan h5:hover {
+  color: #f68121;
+}
+
+@media only screen and (max-width: 800px) {
+  #h_1 .items-duan .img-duan {
+    width: 90%;
+    margin: auto;
+    height: 186px;
+    margin-bottom: 10px;
+  }
+}
+
+#pd_1 h1 {
+  font-size: 17px;
+  color: #1f648b;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+#pd_1 span {
+  font-size: 13px;
+}
+
+#pd_1 h2.khu-vuc {
+  font-size: 14px;
+  color: #6b6967;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#pd_1 h2.khu-vuc a {
+  color: #1f648b;
+}
+
+#pd_1 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#pd_1 ul li {
+  padding: 10px 0px;
+  width: 100%;
+  border-top: 1px solid #bcbcbc;
+  font-size: 14px;
+}
+
+#pd_1 .span1 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 120px !important;
+  text-align: left;
+  font-weight: bold;
+}
+
+#pd_1 h5 {
+  font-weight: bold;
+  color: #1f648b;
+  margin-bottom: 10px;
+}
+
+#pd_1 p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#pd_1 .owl-items {
+  width: 100%;
+  text-align: center;
+}
+
+#pd_1 .owl-items .owl-img {
+  width: 100%;
+  height: auto;
+}
+
+#pd_2 h5 {
+  font-weight: bold;
+  color: #1f648b;
+  margin-bottom: 10px;
+}
+
+#pd_3 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#pd_3 ul li {
+  padding: 10px 0px;
+  width: 100%;
+  border-top: 1px solid #bcbcbc;
+  font-size: 14px;
+}
+
+#pd_3 h5 {
+  font-weight: bold;
+  color: #1f648b;
+  margin-bottom: 10px;
+}
+
+#pd_3 .span1 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 120px !important;
+  text-align: left;
+  font-weight: bold;
+}
+
+#pd_4 h6 {
+  font-weight: bold;
+  color: #1f648b;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #1f648b;
+}
+
+#pd_4 .items-duan {
+  margin-bottom: 30px;
+}
+
+#pd_4 .items-duan .img-duan {
+  width: 200px;
+  height: 138px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#pd_4 .items-duan .tt-duan {
+  padding: 0 26px;
+}
+
+#pd_4 .items-duan .tt-duan p {
+  color: #6f6d6b;
+  font-size: 14px;
+  min-width: 24%;
+  line-height: 18px;
+  text-align: left;
+  /*margin:1em;*/
+}
+
+#pd_4 .items-duan .tt-duan p.p-content {
+  margin-bottom: 12px;
+  height: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#pd_4 .items-duan .tt-duan p.tt-ngaydangtin {
+  margin-top: 6px;
+  width: 100%;
+  text-align: right;
+}
+
+#pd_4 .items-duan .tt-duan p.tt-ngaydangtin a {
+  color: #144381;
+}
+
+#pd_4 .items-duan h5 {
+  font-family: 'Archivo', sans-serif !important;
+  padding-top: 3px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  padding-bottom: 12px;
+}
+
+#pd_4 .items-duan h5 a {
+  color: #144381;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#pd_4 .items-duan h5:hover {
+  color: #f68121;
+}
+
+@media only screen and (max-width: 800px) {
+  #pd_4 .items-duan .img-duan {
+    width: 90%;
+    margin: auto;
+    height: 186px;
+    margin-bottom: 10px;
+  }
+}
+
+#c_2 {
+  background-position: center center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+#c_2 h4 {
+  font-size: 18px;
+  color: #f68121;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+#c_2 p {
+  line-height: 23px;
+  font-size: 16px;
+  /*font-weight: bold;*/
+}
+
+#c_2 h5 {
+  font-size: 20px;
+  color: #f68121;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+#c_2 .line-break-lh {
+  background-color: #f68121;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#c_2 .line-break-lh:after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  left: -60px;
+  height: 0px;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+  border-right: 50px solid #f68121;
+  /* Tam giác phải được đổ màu */
+}
+
+#c_2 .line-break-lh:before {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  right: -60px;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+  border-left: 50px solid #f68121;
+  /* Tam giác trái được đổ màu */
+}
+
+#c_2 #form_lienhe input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+#c_2 #form_lienhe textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#c_2 #form_lienhe a {
+  background-color: #f68121;
+  padding: 10px 16px 8px 16px;
+  color: white;
+}
+
+#n_2 h4 {
+  font-size: 14px;
+  color: white;
+  background-color: #f68121;
+  padding: 10px 0px 8px 0px;
+  text-align: center;
+  /*font-weight: 600;*/
+  border-radius: 4px 4px 0px 0px;
+  margin-bottom: 20px;
+}
+
+#n_2 .items-duan {
+  margin-bottom: 30px;
+}
+
+#n_2 .items-duan .img-duan {
+  width: 200px;
+  height: 138px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#n_2 .items-duan .tt-duan {
+  padding: 0 26px;
+}
+
+#n_2 .items-duan .tt-duan p {
+  color: #6f6d6b;
+  font-size: 14px;
+  min-width: 24%;
+  line-height: 18px;
+  text-align: left;
+}
+
+#n_2 .items-duan .tt-duan .tintuc-sortcontent p {
+  color: #6f6d6b;
+  font-size: 14px;
+  min-width: 24%;
+  line-height: 18px;
+  text-align: left;
+  /*margin:1em;*/
+  margin-bottom: 12px;
+  height: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#n_2 .items-duan .tt-duan p.tt-ngaydangtin {
+  margin-top: 6px;
+  width: 100%;
+  text-align: right;
+}
+
+#n_2 .items-duan .tt-duan p.tt-ngaydangtin a {
+  color: #144381;
+}
+
+#n_2 .items-duan h5 {
+  font-family: 'Archivo', sans-serif !important;
+  padding-top: 3px;
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 12px;
+}
+
+#n_2 .items-duan h5 a {
+  color: #007bff;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#n_2 .items-duan h5 a:hover {
+  color: #f68121;
+}
+
+#n_2 .drop-sort {
+  margin-bottom: 20px;
+}
+
+#n_2 .drop-sort p {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#n_2 .drop-sort p span {
+  color: #1f648b;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  #n_2 .items-duan .img-duan {
+    width: 90%;
+    margin: auto;
+    height: 186px;
+    margin-bottom: 10px;
+  }
+}
+
+#p_1 h4 {
+  font-size: 14px;
+  color: white;
+  background-color: #f68121;
+  padding: 10px 0px 8px 0px;
+  text-align: center;
+  /*font-weight: 600;*/
+  border-radius: 4px 4px 0px 0px;
+  margin-bottom: 20px;
+}
+
+#p_1 .drop-sort {
+  margin-bottom: 20px;
+}
+
+#p_1 .drop-sort p {
+  font-size: 14px;
+}
+
+#p_1 .drop-sort p span {
+  color: #1f648b;
+  font-weight: bold;
+}
+
+#p_1 .drop-sort select {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 20px;
+}
+
+#p_1 .items-duan {
+  margin-bottom: 30px;
+}
+
+#p_1 .items-duan .img-duan {
+  width: 200px;
+  height: 138px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#p_1 .items-duan .tt-duan {
+  padding: 0 26px;
+}
+
+#p_1 .items-duan .tt-duan p {
+  color: #6f6d6b;
+  font-size: 14px;
+  min-width: 24%;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#p_1 .items-duan .tt-duan p.tt-ngaydangtin {
+  margin-top: 6px;
+  width: 100%;
+  text-align: right;
+}
+
+#p_1 .items-duan .tt-duan p.tt-ngaydangtin a {
+  color: #144381;
+}
+
+#p_1 .items-duan h5 {
+  font-family: 'Archivo', sans-serif !important;
+  padding-top: 3px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  padding-bottom: 12px;
+}
+
+#p_1 .items-duan h5 a {
+  color: #144381;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#p_1 .items-duan h5 a:hover {
+  color: #f68121;
+}
+
+@media only screen and (max-width: 800px) {
+  #p_1 .items-duan .img-duan {
+    width: 90%;
+    margin: auto;
+    height: 186px;
+    margin-bottom: 10px;
+  }
 }
