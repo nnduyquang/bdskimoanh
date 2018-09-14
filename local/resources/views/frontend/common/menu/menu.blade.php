@@ -145,10 +145,10 @@
                     <ul>
                         <li><a class="{{ request()->is('/') ? 'active' : '/' }}" href="{{URL::asset('/')}}">TRANG
                                 CHỦ</a></li>
-                        <li><a href="{{URL::asset('/du-an')}}">GIỚI THIỆU</a></li>
+                        <li><a class="{{ request()->is('gioi-thieu*') ? 'active' : '/'}}" href="{{URL::asset('/gioi-thieu.html')}}">GIỚI THIỆU</a></li>
                         <li><a class="{{ request()->is('tin-tuc*') ? 'active' : '/'}}" href="{{URL::asset('/tin-tuc.html')}}">TIN TỨC</a></li>
                         <li><a class="{{ request()->is('duan*') ? 'active' : '/'}}" href="{{URL::asset('/duan.html')}}">DỰ ÁN</a></li>
-                        <li><a href="">VIDEO</a></li>
+                        <li><a class="{{ request()->is('trang-tin*') ? 'active' : '/'}}" href="{{URL::asset('trang-tin.html')}}">VIDEO</a></li>
                         <li><a class="{{ request()->is('tuyen-dung*') ? 'active' : '/'}}" href="{{URL::asset('/tuyen-dung.html')}}">TUYỂN DỤNG</a></li>
                         <li><a class="{{ request()->is('lien-he*') ? 'active' : '/'}}" href="{{URL::asset('/lien-he.html')}}">LIÊN HỆ</a></li>
                     </ul>

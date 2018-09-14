@@ -25,6 +25,13 @@ Route::get('/tin-tuc-chi-tiet.html', function () {
     return view('frontend.news-details.index');
 });
 
+Route::get('/trang-tin.html', function () {
+    return view('frontend.page.index');
+});
+
+Route::get('/gioi-thieu.html', function () {
+    return view('frontend.page.index');
+});
 Route::get('/lien-he.html', function () {
     return view('frontend.contact.index');
 });

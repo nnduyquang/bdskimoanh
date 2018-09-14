@@ -21,7 +21,7 @@
     }
 
     #search_box p {
-        font-family: 'Kanit', sans-serif;
+        /*font-family: 'Kanit', sans-serif;*/
         /*font-weight: 600;*/
     }
 
@@ -62,7 +62,7 @@
         <div id="search_box">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="text-white pt-2 pb-2" style="background-color:rgba(246,129,33,0.8);">Tìm kiếm bất động sản</p>
+                    <p class="text-white pt-2 pb-2" style="background-color:rgba(246,129,33,0.8);">TÌM KIẾM BẤT ĐỘNG SẢN</p>
                 </div>
                 <div class="col-md-12">
                     <div class="row pt-4 pb-4">
