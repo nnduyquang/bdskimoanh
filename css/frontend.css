@@ -1065,12 +1065,11 @@ This class is added to the container
   padding-top: 3px;
   font-size: 15px;
   line-height: 20px;
-  font-weight: 600;
   padding-bottom: 12px;
 }
 
 #p_1 .items-duan h5 a {
-  color: #144381;
+  color: #007bff;
   -webkit-transition: .3s;
   transition: .3s;
 }
