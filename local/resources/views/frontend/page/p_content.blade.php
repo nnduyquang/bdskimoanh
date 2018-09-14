@@ -43,7 +43,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>VIDEO HOẠT ĐỘNG</h3>
+                <h3>GIỚI THIỆU HOẠT ĐỘNG VIDEO</h3>
 
                 <div class="line-break-lh"></div>
             </div>
