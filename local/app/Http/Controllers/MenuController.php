@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Menu\MenuRepositoryInterface;
+use App\Repositories\Backend\Menu\MenuRepositoryInterface;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -14,42 +14,32 @@ class MenuController extends Controller
         $this->menuRepository = $menuRepository;
     }
 
-    public function loadTreeMenu()
+    public function index(Request $request)
     {
-        return response()->json($this->menuRepository->getAllMenuTree());
+        $menus = $this->menuRepository->getAllMenuItem();
+        return view('backend.admin.menu.index', compact('menus'));
     }
 
-    public function loadMenuIndex()
+    public function store(Request $request)
     {
-        return $this->menuRepository->loadMenuIndex();
+        $menu = $this->menuRepository->createNewMenuItem($request);
+        return redirect()->route('menu.index');
     }
 
-    public function createNewMenu(Request $request)
-    {
-        $this->menuRepository->createNewMenu($request);
-        return redirect()->route('menu.index')->with('success', 'Tạo Mới Thành Công Bài Viết');
+    public function orderMenu(Request $request){
+        $menu = $this->menuRepository->orderMenu($request);
+        return redirect()->route('menu.index');
     }
 
-    public function updateMenu(Request $request, $id)
+    public function update(Request $request)
     {
-        $this->menuRepository->updateMenu($request,$id);
-        return redirect()->route('menu.index')->with('success', 'Cập Nhật Thành Công Menu');
+        $menu = $this->menuRepository->updateMenuItem($request);
+        return redirect()->route('menu.index');
     }
 
-    public function findMenuById($id)
-    {
-        return response()->json($this->menuRepository->findMenuById($id));
-    }
-
-    public function updateNodeFamily($id, $parentId)
-    {
-        $this->menuRepository->updateNodeFamily($id, $parentId);
-    }
-
-    public function deleteMenu($id)
-    {
-        $this->menuRepository->deleteMenu($id);
-        return redirect()->route('menu.index')->with('success', 'Xóa Thành Công Menu');
+    public function delete($id){
+        $menu = $this->menuRepository->deleteMenuItem($id);
+        return redirect()->route('menu.index');
     }
 
 }

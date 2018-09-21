@@ -15,6 +15,10 @@ class CategoryItem extends Model
         return $this->belongsTo('App\Seo','seo_id');
     }
 
+    public function posts(){
+        return $this->belongsToMany('App\Post','category_many','category_id','item_id')->withTimestamps();
+    }
+
     public function findAllChild($dd_categorie_posts, $parent_id = 0, &$newArray)
     {
         $dash = '';

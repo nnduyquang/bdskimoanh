@@ -183,7 +183,7 @@ return [
         App\Providers\MenuServiceProvider::class,
         App\Providers\FrontendServiceProvider::class,
         App\Providers\PostServiceProvider::class,
-
+        App\Providers\LocationServiceProvider::class,
     ],
 
     /*

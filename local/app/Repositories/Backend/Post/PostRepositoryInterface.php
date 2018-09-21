@@ -4,17 +4,17 @@ namespace App\Repositories\Backend\Post;
 
 interface PostRepositoryInterface
 {
-    public function getAllPostOrderById();
+    public function getAllPostByTypeOrderById($type);
 
-    public function showCreatePost();
+    public function showCreatePost($type);
 
-    public function showEditPost($id);
+    public function showEditPost($id, $type);
 
-    public function createNewPostWithSeoId($request);
+    public function createNewPostWithSeoId($request, $type);
 
-    public function updateNewPost($request, $id);
+    public function updatePost($request, $id, $type);
 
-    public function deletePost($id);
+    public function deletePost($id,$type);
 }
 
 
