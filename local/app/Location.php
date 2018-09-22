@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
     protected $fillable = [
-        'name', 'path', 'parent_id', 'order', 'is_active'
+        'name', 'path', 'parent_id', 'order', 'is_active','seo_id'
     ];
 
     public function children()
