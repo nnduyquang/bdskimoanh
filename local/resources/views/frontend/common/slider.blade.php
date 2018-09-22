@@ -33,11 +33,11 @@
         margin-bottom: 10px;
     }
 
-    #search_box select option{
+    #search_box select option {
 
     }
 
-    #search_box .btn-timkiem{
+    #search_box .btn-timkiem {
         margin-left: 5%;
         padding: 9px 15px;
         border-radius: 3px;
@@ -49,8 +49,8 @@
         font-size: 14px;
     }
 
-    #search_box .btn-timkiem:hover{
-        background-color:#144381 ;
+    #search_box .btn-timkiem:hover {
+        background-color: #144381;
     }
 
 </style>
@@ -62,32 +62,27 @@
         <div id="search_box">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="text-white pt-2 pb-2" style="background-color:rgba(246,129,33,0.8);">TÌM KIẾM BẤT ĐỘNG SẢN</p>
+                    <p class="text-white pt-2 pb-2" style="background-color:rgba(246,129,33,0.8);">TÌM KIẾM BẤT ĐỘNG
+                        SẢN</p>
                 </div>
                 <div class="col-md-12">
                     <div class="row pt-4 pb-4">
                         <div class="col-md-4">
-                            <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Quận/Huyện</option>
+                            <select name="select-city">
+                                <option value="-1">Chọn Tỉnh/Thành Phố</option>
+                                @foreach($data['cities'] as $key=>$item)
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Phường/Xã</option>
+                            <select name="select-district">
+                                <option value="-1" selected>Chọn Quận/Huyện</option>
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Đường/Phố</option>
+                            <select name="select-ward">
+                                <option value="-1" selected>Chọn Phường/Xã</option>
                             </select>
                         </div>
 
@@ -133,7 +128,7 @@
                         </div>
 
                         <div class="col-md-4 text-left">
-                            <button  class="btn-timkiem">Tìm kiếm</button>
+                            <button class="btn-timkiem">Tìm kiếm</button>
                         </div>
 
 

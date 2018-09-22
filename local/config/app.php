@@ -184,6 +184,7 @@ return [
         App\Providers\FrontendServiceProvider::class,
         App\Providers\PostServiceProvider::class,
         App\Providers\LocationServiceProvider::class,
+        App\Providers\ProductServiceProvider::class,
     ],
 
     /*

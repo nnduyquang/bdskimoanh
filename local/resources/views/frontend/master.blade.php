@@ -38,6 +38,7 @@
 </div>
 {{ Html::script('js/core.common.js') }}
 {{ Html::script('js/core.frontend.js') }}
+{{ Html::script('js/ulti.js') }}
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {

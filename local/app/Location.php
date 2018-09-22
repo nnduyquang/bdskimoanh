@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
     protected $fillable = [
-        'name', 'path', 'parent_id', 'order', 'is_active','seo_id'
+        'name', 'path', 'parent_id', 'order', 'is_active', 'seo_id'
     ];
 
     public function children()
@@ -36,6 +36,16 @@ class Location extends Model
             }
         }
         return $newArray;
+    }
+
+    public function getAllCities()
+    {
+        return $this->whereNull('parent_id')->get();
+    }
+
+    public function getAllChildById($id)
+    {
+        return $this->where('parent_id', $id)->get();
     }
 
     public function prepareParameters($parameters)

@@ -1,9 +1,12 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-});
+//Route::get('/', function () {
+//    return view('frontend.home.index');
+//});
+Route::get('/', 'FrontendController@getFrontend');
+Route::post('/getAllDistrictsByCity', 'FrontendController@getAllDistrictsByCity');
+Route::post('/getAllWardsByDistrict', 'FrontendController@getAllWardsByDistrict');
 
 Route::get('/duan-chitiet.html', function () {
     return view('frontend.product-details.index');
