@@ -129,13 +129,11 @@ class PostRepository extends EloquentRepository implements PostRepositoryInterfa
 
     public function updatePost($request, $id, $type)
     {
-
         $data = [];
         if (!$request->has('isActive'))
             $request->request->add(['isActive' => null]);
         $request->request->add(['path' => '']);
         $parameters = $this->_model->prepareParameters($request);
-//        dd($parameters->all());
         $result = $this->update($id, $parameters->all());
         $result->seos->update($parameters->all());
         switch ($type) {

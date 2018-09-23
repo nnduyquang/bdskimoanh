@@ -23,7 +23,6 @@
         </div>
     @endif
     <div class="wrap-index">
-        {!! Form::open(array('route' => 'product.search','method'=>'POST','id'=>'formSearchProduct')) !!}
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6">
@@ -51,16 +50,18 @@
                     </div>
                 </div>
                 <div class="col-md-6">
+                    {!! Form::open(array('route' => 'product.search','method'=>'POST','id'=>'formSearchProduct')) !!}
                     <div class="input-group">
                         {!! Form::text('txtSearch',null, array('class' => 'form-control','id'=>'txtSearch')) !!}
                         <span class="input-group-btn">
                     {!! Form::submit('Tìm Kiếm', ['class' => 'btn btn-info']) !!}
                         </span>
                     </div>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
-        {!! Form::close() !!}
+
         @if(!empty($keywords))
             <div id="showKeySearch" class="col-md-12">
                 <div class="wrap-search">

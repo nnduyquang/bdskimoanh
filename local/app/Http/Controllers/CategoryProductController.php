@@ -37,19 +37,7 @@ class CategoryProductController extends Controller
      */
     public function create()
     {
-        $dd_category_products = CategoryItem::orderBy('order')->get();
-        foreach ($dd_category_products as $key => $data) {
-            if ($data->level == CATEGORY_POST_CAP_1) {
-                $data->name = ' ---- ' . $data->name;
-            } else if ($data->level == CATEGORY_POST_CAP_2) {
-                $data->name = ' --------- ' . $data->name;
-            } else if ($data->level == CATEGORY_POST_CAP_3) {
-                $data->name = ' ------------------ ' . $data->name;
-            }
-        }
-        $newArray = [];
-        self::showCategoryItemDropDown($dd_category_products, 0, $newArray);
-        $dd_categorie_posts = array_prepend(array_pluck($newArray, 'name', 'id'), 'Cấp Cha', '-1');
+
         return view('backend.admin.categoryproduct.create', compact('roles', 'dd_categorie_posts'));
     }
 

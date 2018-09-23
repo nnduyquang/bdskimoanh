@@ -2,7 +2,9 @@
 
 namespace App\Repositories\Backend\Product;
 
-interface ConfigRepositoryInterface
+interface ProductRepositoryInterface
 {
-
+    public function showCreateProduct();
+    public function getAllDistrictsByCity($request);
+    public function getAllWardsByDistrict($request);
 }

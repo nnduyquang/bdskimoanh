@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Administrator | Smartlinks</title>
 
     {{ Html::style('css/core.common.css') }}
@@ -202,6 +202,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 {{ Html::script('js/ulti.js') }}
 {{ Html::script('js/core.backend.js') }}
 {{ Html::script('js/ckeditor/ckeditor.js') }}
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 {{ Html::script('js/backend.js') }}
 </body>
 </html>

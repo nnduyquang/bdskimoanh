@@ -58,26 +58,44 @@
                 </div>
                 <div class="wrap-create-edit">
                     <strong class="text-title-right">Loại Sản Phẩm</strong>
-                    <div class="form-group">
-                        {!! Form::select('category_product',$dd_category_products, null,array('class' => 'form-control')) !!}
+                    <div class="category-info">
+                    @include('backend.admin.product.list-select-option-create')
                     </div>
+                    {{--<div class="form-group">--}}
+                        {{--{!! Form::select('category_product',$dd_category_products, null,array('class' => 'form-control')) !!}--}}
+                    {{--</div>--}}
                 </div>
                 <div class="wrap-create-edit">
                     <strong class="text-title-right">Địa Điểm</strong>
                     <div class="form-group">
-                        {!! Form::select('category_product',$dd_category_products, null,array('class' => 'form-control')) !!}
+                        <select name="select-city" class="form-control">
+                            <option value="-1">Chọn Tỉnh/Thành Phố</option>
+                            @foreach($cities as $key=>$item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
-                        {!! Form::select('category_product',$dd_category_products, null,array('class' => 'form-control')) !!}
-                    </div><div class="form-group">
-                        {!! Form::select('category_product',$dd_category_products, null,array('class' => 'form-control')) !!}
+                        <select name="select-district" class="form-control">
+                            <option value="-1" selected>Chọn Quận/Huyện</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="select-ward" class="form-control">
+                            <option value="-1" selected>Chọn Phường/Xã</option>
+                        </select>
                     </div>
 
                 </div>
                 <div class="wrap-create-edit">
-                    <strong class="text-title-right">Mã Sản Phẩm</strong>
+                    <strong class="text-title-right">Hướng</strong>
                     <div class="form-group">
-                        {!! Form::text('code',null, array('placeholder' => 'Mã SP','class' => 'form-control')) !!}
+                        <select name="select-direction" class="form-control">
+                            <option value="-1">Chọn Hướng</option>
+                            @foreach($directions as $key=>$item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="wrap-create-edit">
