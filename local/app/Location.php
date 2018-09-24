@@ -56,8 +56,14 @@ class Location extends Model
         $parent_id = $parameters->input('parent_id');
         if ($parent_id == '-1') {
             $parameters['parent_id'] = null;
+            $parameters['level'] = 0;
+        }else{
+            $parameters['level']=self::findLevelById($parent_id)+1;
         }
         return $parameters;
+    }
+    public function findLevelById($id){
+        return $this->where('id',$id)->first()->level;
     }
 
     public function setIsActiveAttribute($value)

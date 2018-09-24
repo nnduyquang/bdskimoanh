@@ -90,7 +90,7 @@
                 <div class="wrap-create-edit">
                     <strong class="text-title-right">Hướng</strong>
                     <div class="form-group">
-                        <select name="select-direction" class="form-control">
+                        <select name="direction_id" class="form-control">
                             <option value="-1">Chọn Hướng</option>
                             @foreach($directions as $key=>$item)
                                 <option value="{{$item->id}}">{{$item->name}}</option>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="wrap-create-edit">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <strong>Giá: </strong>
                                 {!! Form::text('price',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
@@ -108,14 +108,20 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <strong>% Giảm Giá: </strong>
-                                {!! Form::text('sale',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                                <strong>ĐVT: </strong>
+                                <select name="select-unit" class="form-control">
+                                    <option value="-1">Chọn Đơn Vị Tính</option>
+                                    @foreach($units as $key=>$item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <div class="col-md-4">
+
+                        <div class="col-md-5">
                             <div class="form-group">
-                                <strong>Giá Giảm: </strong>
-                                {!! Form::text('final_price',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                                <strong>Diện Tích: </strong>
+                                {!! Form::text('area',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                             </div>
                         </div>
                     </div>

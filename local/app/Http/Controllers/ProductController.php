@@ -36,7 +36,8 @@ class ProductController extends Controller
         $cities = $data['cities'];
         $categoryProduct = $data['categoryProduct'];
         $directions=$data['directions'];
-        return view('backend.admin.product.create', compact('roles', 'cities','categoryProduct','directions'));
+        $units=$data['units'];
+        return view('backend.admin.product.create', compact('roles', 'cities','categoryProduct','directions','units'));
     }
 
     public function getAllDistrictsByCity(Request $request)
@@ -65,76 +66,78 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Product();
-        $seo=new Seo();
-        $name = $request->input('name');
-        $description = $request->input('description');
-        $content = $request->input('content');
-        $order = $request->input('order');
-        $isActive = $request->input('is_active');
-        $categoryPostID = $request->input('category_product');
-        $seoTitle = $request->input('seo_title');
-        $seoDescription = $request->input('seo_description');
-        $seoKeywords = $request->input('seo_keywords');
-        $seoImage=$request->input('seo-image');
-        $code = $request->input('code');
-        $price = $request->input('price');
-        $sale = $request->input('sale');
-        $finalSale = $request->input('final_price');
-        if (!IsNullOrEmptyString($price)) {
-            if (!IsNullOrEmptyString($sale)) {
-                $product->price = $price;
-                $product->sale = $sale;
-                $product->final_price = $finalSale;
-            } else {
-                $product->price = $price;
-                $product->sale = 0;
-                $product->final_price = 0;
-            }
-        } else {
-            $product->price = 0;
-            $product->sale = 0;
-            $product->final_price = 0;
-        }
-        if (!IsNullOrEmptyString($code)) {
-            $product->code = $code;
-        }
-        if (!IsNullOrEmptyString($order)) {
-            $product->order = $order;
-        }
-        if (!IsNullOrEmptyString($isActive)) {
-            $product->isActive = 1;
-        } else {
-            $product->isActive = 0;
-        }
-        if (!IsNullOrEmptyString($description)) {
-            $product->description = $description;
-        }
-        $seo->seo_title= $seoTitle;
-        $seo->seo_description= $seoDescription;
-        $seo->seo_keywords= $seoKeywords;
-        if($seoImage){
-            $seoImage = substr($seoImage, strpos($seoImage, 'images'), strlen($seoImage) - 1);
-            $seo->seo_image= $seoImage;
-        }
-        $seo->save();
-        $image = $request->input('image');
-        if ($image) {
-            $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
-            $product->image = $image;
-        } else {
-            $product->image = NULL;
-        }
-        $product->name = $name;
-        $product->path = chuyen_chuoi_thanh_path($name);
-        $product->image = $image;
-
-        $product->content = $content;
-        $product->category_product_id = $categoryPostID;
-        $product->user_id = Auth::user()->id;
-        $product->seo_id=$seo->id;
-        $product->save();
-        return redirect()->route('product.index')->with('success', 'Tạo Mới Thành Công Sản Phẩm');
+//        $product = new Product();
+//        $seo=new Seo();
+//        $name = $request->input('name');
+//        $description = $request->input('description');
+//        $content = $request->input('content');
+//        $order = $request->input('order');
+//        $isActive = $request->input('is_active');
+//        $categoryPostID = $request->input('category_product');
+//        $seoTitle = $request->input('seo_title');
+//        $seoDescription = $request->input('seo_description');
+//        $seoKeywords = $request->input('seo_keywords');
+//        $seoImage=$request->input('seo-image');
+//        $code = $request->input('code');
+//        $price = $request->input('price');
+//        $sale = $request->input('sale');
+//        $finalSale = $request->input('final_price');
+//        if (!IsNullOrEmptyString($price)) {
+//            if (!IsNullOrEmptyString($sale)) {
+//                $product->price = $price;
+//                $product->sale = $sale;
+//                $product->final_price = $finalSale;
+//            } else {
+//                $product->price = $price;
+//                $product->sale = 0;
+//                $product->final_price = 0;
+//            }
+//        } else {
+//            $product->price = 0;
+//            $product->sale = 0;
+//            $product->final_price = 0;
+//        }
+//        if (!IsNullOrEmptyString($code)) {
+//            $product->code = $code;
+//        }
+//        if (!IsNullOrEmptyString($order)) {
+//            $product->order = $order;
+//        }
+//        if (!IsNullOrEmptyString($isActive)) {
+//            $product->isActive = 1;
+//        } else {
+//            $product->isActive = 0;
+//        }
+//        if (!IsNullOrEmptyString($description)) {
+//            $product->description = $description;
+//        }
+//        $seo->seo_title= $seoTitle;
+//        $seo->seo_description= $seoDescription;
+//        $seo->seo_keywords= $seoKeywords;
+//        if($seoImage){
+//            $seoImage = substr($seoImage, strpos($seoImage, 'images'), strlen($seoImage) - 1);
+//            $seo->seo_image= $seoImage;
+//        }
+//        $seo->save();
+//        $image = $request->input('image');
+//        if ($image) {
+//            $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
+//            $product->image = $image;
+//        } else {
+//            $product->image = NULL;
+//        }
+//        $product->name = $name;
+//        $product->path = chuyen_chuoi_thanh_path($name);
+//        $product->image = $image;
+//
+//        $product->content = $content;
+//        $product->category_product_id = $categoryPostID;
+//        $product->user_id = Auth::user()->id;
+//        $product->seo_id=$seo->id;
+//        $product->save();
+        $data = $this->productRepository->createNewProduct($request);
+        return redirect()->route('product.index');
+//        return redirect()->route('product.index')->with('success', 'Tạo Mới Thành Công Sản Phẩm');
     }
 
     /**

@@ -31,6 +31,7 @@ class LocationRepository extends EloquentRepository implements LocationRepositor
         $seo = Seo::create($request->all());
         $request->request->add(['seo_id' => $seo->id]);
         $parameters = $this->_model->prepareParameters($request);
+        dd($parameters);
         $result = $this->_model->create($parameters->all());
         return $data;
     }
