@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 24, 2018 lúc 12:04 PM
+-- Thời gian đã tạo: Th9 25, 2018 lúc 09:08 AM
 -- Phiên bản máy phục vụ: 10.1.31-MariaDB
 -- Phiên bản PHP: 7.0.29
 
@@ -65,6 +65,17 @@ CREATE TABLE `category_many` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `category_many`
+--
+
+INSERT INTO `category_many` (`category_id`, `item_id`, `created_at`, `updated_at`) VALUES
+(1, 1, '2018-09-25 02:07:56', '2018-09-25 02:07:56'),
+(1, 3, '2018-09-25 03:42:07', '2018-09-25 03:42:07'),
+(2, 1, '2018-09-25 02:07:56', '2018-09-25 02:07:56'),
+(2, 2, '2018-09-25 02:26:56', '2018-09-25 02:26:56'),
+(2, 4, '2018-09-25 04:22:46', '2018-09-25 04:22:46');
 
 -- --------------------------------------------------------
 
@@ -415,11 +426,20 @@ CREATE TABLE `products` (
   `direction_id` int(11) DEFAULT NULL,
   `unit_id` int(11) DEFAULT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `category_produt_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `seo_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `path`, `is_active`, `image`, `description`, `content`, `area`, `price`, `order`, `is_hot`, `location_id`, `direction_id`, `unit_id`, `user_id`, `created_at`, `updated_at`, `seo_id`) VALUES
+(1, 'adsadasdasd', 'adsadasdasd', 1, 'images/uploads/images/gt_1.jpg', '<p>\r\n	gfgfdhgfhjfh\r\n</p>', '<p>\r\n	ghghjgh\r\n</p>', NULL, 50, 1, 0, 8, 2, NULL, 1, '2018-09-25 02:07:56', '2018-09-25 02:07:56', 1),
+(2, '12312312', '12312312', 1, 'images/uploads/images/gt_1.jpg', '<p>\r\n	354645645\r\n</p>', '<p>\r\n	fhjghjgh\r\n</p>', 45, 5, 1, 0, 1, -1, 3, 1, '2018-09-25 02:26:56', '2018-09-25 02:26:56', 1),
+(3, 'quang nguyen', 'quang-nguyen', 1, 'images/uploads/images/gt_1.jpg', '<p>\r\n	m,nm,mn,nm,\r\n</p>', '<p>\r\n	bvnv\r\n</p>', 80, 45, 1, 0, 21, -1, 2, 1, '2018-09-25 03:42:07', '2018-09-25 04:27:16', 1),
+(4, 'czxc', 'czxc', 1, 'images/uploads/images/gt_1.jpg', '<p>\r\n	cccccc\r\n</p>', '<p>\r\n	vcbvcv\r\n</p>', 50, 15, 1, 0, 14, 8, 1, 1, '2018-09-25 03:46:17', '2018-09-25 04:28:31', 1);
 
 -- --------------------------------------------------------
 
@@ -748,7 +768,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`

@@ -11,4 +11,8 @@ interface ProductRepositoryInterface
     public function getAllWardsByDistrict($request);
 
     public function createNewProduct($request);
+
+    public function showEditProduct($id);
+
+    public function updateProduct($request,$id);
 }

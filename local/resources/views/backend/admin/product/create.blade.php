@@ -61,9 +61,6 @@
                     <div class="category-info">
                     @include('backend.admin.product.list-select-option-create')
                     </div>
-                    {{--<div class="form-group">--}}
-                        {{--{!! Form::select('category_product',$dd_category_products, null,array('class' => 'form-control')) !!}--}}
-                    {{--</div>--}}
                 </div>
                 <div class="wrap-create-edit">
                     <strong class="text-title-right">Địa Điểm</strong>
@@ -120,7 +117,7 @@
 
                         <div class="col-md-5">
                             <div class="form-group">
-                                <strong>Diện Tích: </strong>
+                                <strong>Diện Tích(m2): </strong>
                                 {!! Form::text('area',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                             </div>
                         </div>

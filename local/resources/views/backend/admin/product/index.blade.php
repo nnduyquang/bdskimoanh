@@ -29,9 +29,9 @@
                     <div id="ulti-bar" class="col-md-12">
                         <div class="row">
                             {{--<div class="col-md-2 v-divider-right">--}}
-                                {{--@permission(('product-create'))--}}
-                                {{--<a class="btn btn-success" href="{{ route('product.create') }}"> + Sản Phẩm</a>--}}
-                                {{--@endpermission--}}
+                            {{--@permission(('product-create'))--}}
+                            {{--<a class="btn btn-success" href="{{ route('product.create') }}"> + Sản Phẩm</a>--}}
+                            {{--@endpermission--}}
                             {{--</div>--}}
                             <div class="ulti-edit" class="col-md-2">
                                 <ul class="ulti-head">
@@ -80,8 +80,8 @@
                     <th></th>
                     <th>Tên Sản Phẩm</th>
                     <th>Hình</th>
-                    <th>Giá Gốc</th>
-                    <th>Giá Giảm</th>
+                    <th>Giá</th>
+                    <th>Diện Tích</th>
                     <th>Loại Sản Phẩm</th>
                     <th>Người Đăng</th>
                     <th>Ngày Đăng</th>
@@ -94,13 +94,29 @@
                     <td>{{Form::checkbox('id[]',$data->id)}}</td>
                     <td>{{ $data->name }}</td>
                     <td>{{Html::image($data->image,'',array('class'=>'product-img'))}}</td>
-                    <td>{{$data->price}}</td>
-                    <td>{{$data->final_price}}</td>
-                    <td>{{ $data->categoryproduct->name }}</td>
+                    <td>
+                        @if(!is_null($data->unit_id))
+                            {{$data->price}} {{$data->units->name}}
+                        @else
+                            Không xác định
+                        @endif
+                    </td>
+                    <td>
+                        @if(!is_null($data->area))
+                            {{$data->area}} m2
+                        @else
+                            Không xác định
+                        @endif
+
+                    </td>
+                    @php
+                        $arrayCategoryItem=$data->categoryitems()->get();
+                    @endphp
+                    <td>{{$arrayCategoryItem->implode('name',',')}}</td>
                     <td>{{ $data->users->name }}</td>
                     <td>{{ $data->created_at }}</td>
                     <td>{{ $data->updated_at }}</td>
-                    <td>{{$data->isActive}}</td>
+                    <td>{{$data->is_active}}</td>
                     <td>
                         @permission(('product-edit'))
                         <a class="btn btn-primary" href="{{ route('product.edit',$data->id) }}">Cập Nhật</a>

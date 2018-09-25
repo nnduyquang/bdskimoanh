@@ -6,9 +6,11 @@ use App\CategoryItem;
 use App\Direction;
 use App\Location;
 use App\Repositories\EloquentRepository;
+use App\Seo;
 use App\Unit;
 
-class ProductRepository extends EloquentRepository implements ProductRepositoryInterface{
+class ProductRepository extends EloquentRepository implements ProductRepositoryInterface
+{
     public function getModel()
     {
         return \App\Product::class;
@@ -18,19 +20,20 @@ class ProductRepository extends EloquentRepository implements ProductRepositoryI
     {
         $data = [];
         $location = new Location();
-        $categoryItem=new CategoryItem();
-        $direction= new Direction();
-        $unit=new Unit();
-        $categoryProduct=$categoryItem->getAllParent('order', CATEGORY_PRODUCT);
+        $categoryItem = new CategoryItem();
+        $direction = new Direction();
+        $unit = new Unit();
+        $categoryProduct = $categoryItem->getAllParent('order', CATEGORY_PRODUCT);
         $cities = $location->getAllCities();
-        $directions=$direction->getAllDirection();
-        $units=$unit->getAllUnit();
+        $directions = $direction->getAllDirection();
+        $units = $unit->getAllUnit();
         $data['cities'] = $cities;
-        $data['categoryProduct']=$categoryProduct;
-        $data['directions']=$directions;
-        $data['units']=$units;
+        $data['categoryProduct'] = $categoryProduct;
+        $data['directions'] = $directions;
+        $data['units'] = $units;
         return $data;
     }
+
     public function getAllDistrictsByCity($request)
     {
         $data = [];
@@ -56,11 +59,68 @@ class ProductRepository extends EloquentRepository implements ProductRepositoryI
     public function createNewProduct($request)
     {
         $data = [];
-//        $seo = Seo::create($request->all());
-        $request->request->add(['seo_id' => 1]);
+        $seo = Seo::create($request->all());
+        $request->request->add(['seo_id' => $seo->id]);
         $parameters = $this->_model->prepareParameters($request);
-        dd($parameters->all());
         $result = $this->_model->create($parameters->all());
+        $result->categoryitems()->attach($parameters['list_category_id']);
+        return $data;
+    }
+
+    public function showEditProduct($id)
+    {
+        $data['product'] = $this->find($id);
+        $data['districts']=null;
+        $data['district_id']=null;
+        $data['wards']=null;
+        $data['ward_id']=null;
+        $location = new Location();
+        $direction = new Direction();
+        $categoryItem = new CategoryItem();
+        $directions = $direction->getAllDirection();
+        $data['directions'] = $directions;
+        $unit = new Unit();
+        $units = $unit->getAllUnit();
+        $data['units'] = $units;
+        $categoryProduct = $categoryItem->getAllParent('order', CATEGORY_PRODUCT);
+        $data['categoryProduct'] = $categoryProduct;
+        $level = $location->findLevelById($data['product']->location_id);
+        switch ($level) {
+            case 0:
+                $data['cities']=$location->getAllCities();
+                $data['city_id']=$data['product']->location_id;
+                $data['districts']=$location->getAllChildById($data['product']->location_id);
+                break;
+            case 1:
+                $parentIdDistrict=$location->findParentById($data['product']->location_id);
+                $data['districts']=$location->getAllChildById($parentIdDistrict);
+                $data['district_id']=$data['product']->location_id;
+                $data['cities']=$location->getAllCities();
+                $data['city_id']=$parentIdDistrict;
+                $data['wards'] = $location->getAllChildById($data['product']->location_id);
+                break;
+            case 2:
+                $parentIdWard = $location->findParentById($data['product']->location_id);
+                $data['wards'] = $location->getAllChildById($parentIdWard);
+                $data['ward_id']=$data['product']->location_id;
+                $parentIdDistrict=$location->findParentById($data['ward_id']);
+                $data['district_id']=$parentIdDistrict;
+                $parentIDCity=$location->findParentById($parentIdDistrict);
+                $data['districts']=$location->getAllChildById($parentIDCity);
+                $data['cities']=$location->getAllCities();
+                $data['city_id']=$parentIDCity;
+                break;
+        }
+        return $data;
+    }
+
+    public function updateProduct($request, $id)
+    {
+        $data = [];
+        $parameters = $this->_model->prepareParameters($request);
+        $result = $this->update($id,$parameters->all());
+        $result->seos->update($parameters->all());
+        $result->categoryitems()->sync($parameters['list_category_id']);
         return $data;
     }
 

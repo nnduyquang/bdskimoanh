@@ -65,6 +65,9 @@ class Location extends Model
     public function findLevelById($id){
         return $this->where('id',$id)->first()->level;
     }
+    public function findParentById($id){
+        return $this->where('id',$id)->first()->parent_id;
+    }
 
     public function setIsActiveAttribute($value)
     {
