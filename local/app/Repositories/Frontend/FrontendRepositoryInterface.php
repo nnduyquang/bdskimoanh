@@ -9,4 +9,6 @@ interface FrontendRepositoryInterface
     public function getAllDistrictsByCity($request);
 
     public function getAllWardsByDistrict($request);
+
+    public function getAllMenuFrontend();
 }

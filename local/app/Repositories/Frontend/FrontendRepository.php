@@ -4,6 +4,7 @@ namespace App\Repositories\Frontend;
 
 
 use App\Location;
+use App\Menu;
 
 class FrontendRepository implements FrontendRepositoryInterface
 {
@@ -25,7 +26,6 @@ class FrontendRepository implements FrontendRepositoryInterface
         $data['success'] = 'success';
         $data['districts'] = $wards;
         return $data;
-        // TODO: Implement getAllWardByCity() method.
     }
 
     public function getAllWardsByDistrict($request)
@@ -36,6 +36,14 @@ class FrontendRepository implements FrontendRepositoryInterface
         $wards = $location->getAllChildById($id);
         $data['success'] = 'success';
         $data['wards'] = $wards;
+        return $data;
+    }
+
+    public function getAllMenuFrontend()
+    {
+        $data = [];
+        $menu=new Menu();
+        $data=$menu->getAllOrderBy('order');
         return $data;
     }
 

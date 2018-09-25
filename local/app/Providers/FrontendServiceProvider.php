@@ -14,6 +14,7 @@ class FrontendServiceProvider extends ServiceProvider
     public function boot()
     {
 //        view()->composer('*', 'App\Http\ViewComposers\SidebarComposer');
+        view()->composer('*', 'App\Http\ViewComposers\MenuComposer');
         view()->composer('*', 'App\Http\ViewComposers\FrontendComposer');
     }
 
