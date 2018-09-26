@@ -18,11 +18,10 @@ class PostController extends Controller
     {
         $this->postRepository = $postRepository;
     }
-    public function index(Request $request,$type)
+    public function index(Request $request)
     {
-        $data = $this->postRepository->getAllPostByTypeOrderById($type);
-        $posts=$data['posts'];
-        return view($data['view'], compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
+        $posts = $this->postRepository->getAllPostByTypeOrderById();
+        return view('backend.admin.post.index', compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -30,10 +29,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($type)
+    public function create()
     {
-        $data=$this->postRepository->showCreatePost($type);
-        return view($data['view'], compact('roles', 'data'));
+        $data=$this->postRepository->showCreatePost();
+        $categoryPost = $data['categoryPost'];
+        return view('backend.admin.post.create', compact('roles', 'categoryPost'));
     }
 
     /**
@@ -42,10 +42,10 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$type)
+    public function store(Request $request)
     {
-        $data = $this->postRepository->createNewPostWithSeoId($request,$type);
-        return redirect()->route($data['view']);
+        $data = $this->postRepository->createNewPostWithSeoId($request);
+        return redirect()->route('post.index');
     }
 
     /**
@@ -65,11 +65,11 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,$type)
+    public function edit($id)
     {
-//        $post = $this->postRepository->getPostById($id);
-        $data=$this->postRepository->showEditPost($id,$type);
-        return view($data['view'], compact('data'));
+        $data=$this->postRepository->showEditPost($id);
+        $categoryPost = $data['categoryPost'];
+        return view($data['view'], compact('categoryPost'));
     }
 
     /**
@@ -79,10 +79,10 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id,$type)
+    public function update(Request $request, $id)
     {
-        $data = $this->postRepository->updatePost($request,$id,$type);
-        return redirect()->route($data['view']);
+        $data = $this->postRepository->updatePost($request,$id);
+        return redirect()->route('post.index');
     }
 
     /**
@@ -91,9 +91,9 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id,$type)
+    public function destroy($id)
     {
-        $data=$this->postRepository->deletePost($id,$type);
-        return redirect()->route($data['view']);
+        $data=$this->postRepository->deletePost($id);
+        return redirect()->route('post.index');
     }
 }
