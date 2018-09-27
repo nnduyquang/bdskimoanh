@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 
 //Route::get('/', function () {
@@ -73,6 +73,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //CATEGORY POST
     Route::get('sml_admin/danh-muc-bai-viet', ['as' => 'categorypost.index', 'uses' => 'CategoryItemController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']])->defaults('type','categorypost');
+    Route::post('sml_admin/danh-muc-bai-viet/search', ['as' => 'categorypost.search', 'uses' => 'CategoryItemController@search'])->defaults('type','categorypost');
     Route::post('sml_admin/danh-muc-bai-viet/create', ['as' => 'categorypost.store', 'uses' => 'CategoryItemController@store', 'middleware' => ['permission:page-create']])->defaults('type','categorypost');
     Route::get('sml_admin/danh-muc-bai-viet/create', ['as' => 'categorypost.create', 'uses' => 'CategoryItemController@create', 'middleware' => ['permission:page-create']])->defaults('type','categorypost');
     Route::get('sml_admin/danh-muc-bai-viet/{id}/edit', ['as' => 'categorypost.edit', 'uses' => 'CategoryItemController@edit', 'middleware' => ['permission:page-edit']])->defaults('type','categorypost');

@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    @include('frontend.common.r_n_td')
+                    @include('frontend.common.r_n_n')
                 </div>
             </div>
         </div>

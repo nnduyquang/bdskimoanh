@@ -57,16 +57,20 @@ class Location extends Model
         if ($parent_id == '-1') {
             $parameters['parent_id'] = null;
             $parameters['level'] = 0;
-        }else{
-            $parameters['level']=self::findLevelById($parent_id)+1;
+        } else {
+            $parameters['level'] = self::findLevelById($parent_id) + 1;
         }
         return $parameters;
     }
-    public function findLevelById($id){
-        return $this->where('id',$id)->first()->level;
+
+    public function findLevelById($id)
+    {
+        return $this->where('id', $id)->first()->level;
     }
-    public function findParentById($id){
-        return $this->where('id',$id)->first()->parent_id;
+
+    public function findParentById($id)
+    {
+        return $this->where('id', $id)->first()->parent_id;
     }
 
     public function setIsActiveAttribute($value)
@@ -75,6 +79,22 @@ class Location extends Model
             $this->attributes['is_active'] = 1;
         } else {
             $this->attributes['is_active'] = 0;
+        }
+    }
+
+    public function getStringLocatationById($id)
+    {
+        $stringLocation = '';
+        self::recursiveLocationName($id,$stringLocation);
+
+        return substr($stringLocation, 0, strlen($stringLocation) - 1);
+    }
+    public function recursiveLocationName($id,&$stringLocation){
+
+        $location=$this->find($id);
+        $stringLocation=$stringLocation.$location->name.',';
+        if(!is_null($location->parent_id)){
+            self::recursiveLocationName($location->parent_id,$stringLocation);
         }
     }
 

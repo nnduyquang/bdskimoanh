@@ -57,9 +57,22 @@
                     </div>
                 </div>
                 <div class="wrap-create-edit">
+                    <strong class="text-title-right">Thêm Hình Sản Phẩm </strong>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {!! Form::button('Thêm', array('id' => 'btnBrowseMore','class'=>'btn btn-primary')) !!}
+                        </div>
+                        <div class="form-group">
+                            <div id="add-image" class="row">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-create-edit">
                     <strong class="text-title-right">Loại Sản Phẩm</strong>
                     <div class="category-info">
-                    @include('backend.admin.product.list-select-option-create')
+                        @include('backend.admin.product.list-select-option-create')
                     </div>
                 </div>
                 <div class="wrap-create-edit">

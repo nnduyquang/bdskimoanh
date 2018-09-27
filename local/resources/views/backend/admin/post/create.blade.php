@@ -32,6 +32,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="wrap-create-edit">
+                    {!! Form::hidden('post_type', 1) !!}
                     <strong class="text-title-left">Tên Bài Viết:</strong>
                     <div class="form-group">
                         {!! Form::text('title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
@@ -39,9 +40,8 @@
                 </div>
                 <div class="wrap-create-edit">
                     <strong class="text-title-left">Chuyên Mục</strong>
-                    <div class="form-group">
-
-
+                    <div class="category-info">
+                        @include('backend.admin.post.list-select-option-create')
                     </div>
                 </div>
                 <div class="wrap-create-edit">

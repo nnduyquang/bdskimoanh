@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,6 +65,22 @@ class Product extends Model
         } else {
             $parameters['location_id'] = 1;
         }
+        if ($parameters->input('image-choose')) {
+            $listImage = $parameters->input('image-choose');
+            $subImage = '';
+            if (count($listImage) != 0) {
+                foreach ($listImage as $key => $item) {
+                    if (hasHttpOrHttps($item))
+                        $subImage = $subImage . substr($item, strpos($item, 'images'), strlen($item) - 1) . ';';
+                    else {
+                        $subImage = $subImage . $item . ';';
+                    }
+                }
+                $parameters->request->add(['sub_image' => substr($subImage, 0, -1)]);
+            }
+        } else {
+            $parameters->request->add(['sub_image' => null]);
+        }
         return $parameters;
 
     }
@@ -95,6 +112,14 @@ class Product extends Model
     {
         if (IsNullOrEmptyString($value))
             $this->attributes['order'] = 1;
+    }
+    public function getCreatedAtAttribute($date)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d-m-Y');
+    }
+
+    public function getAllProductsOderBy($order){
+        return $this->orderBy($order)->get();
     }
 
 }

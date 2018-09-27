@@ -11,4 +11,6 @@ interface FrontendRepositoryInterface
     public function getAllWardsByDistrict($request);
 
     public function getAllMenuFrontend();
+
+    public function getFrontEndInfo();
 }

@@ -26,23 +26,23 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6">
-                    <div id="ulti-bar" class="col-md-12">
-                        <div class="row">
-                            <div class="ulti-edit" class="col-md-2">
-                                <ul class="ulti-head">
-                                    <li><a href="">Chỉnh Sửa</a>
-                                        <ul class="ulti-head-dropdown">
-                                            <li><a class="ulti-copy" href="#">Sao Chép</a></li>
-                                            {!! Form::open(array('route' => 'categorypost.paste','method'=>'POST','id'=>'formPaste')) !!}
-                                            {{ Form::hidden('listID') }}
-                                            <li><a class="ulti-paste" href="#">Dán</a></li>
-                                            {!! Form::close() !!}
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div id="ulti-bar" class="col-md-12">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="ulti-edit" class="col-md-2">--}}
+                                {{--<ul class="ulti-head">--}}
+                                    {{--<li><a href="">Chỉnh Sửa</a>--}}
+                                        {{--<ul class="ulti-head-dropdown">--}}
+                                            {{--<li><a class="ulti-copy" href="#">Sao Chép</a></li>--}}
+                                            {{--{!! Form::open(array('route' => 'categorypost.paste','method'=>'POST','id'=>'formPaste')) !!}--}}
+                                            {{--{{ Form::hidden('listID') }}--}}
+                                            {{--<li><a class="ulti-paste" href="#">Dán</a></li>--}}
+                                            {{--{!! Form::close() !!}--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <div class="col-md-6">
                     {!! Form::open(array('route' => 'categorypost.search','method'=>'POST','id'=>'formSearchCategory')) !!}

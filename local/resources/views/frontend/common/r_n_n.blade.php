@@ -114,21 +114,21 @@
 
         <div class="right-nav-quan border border-top-0 p-2">
 
-            @for ($i = 0; $i < 5; $i++)
+            @foreach($listFrontEndInfo['posts'] as $key=>$item)
                 <div class="right-nav-tintuc d-flex align-items-center">
                     <div class="tintuc-img"
-                         style="background-image:url({{URL::asset('images/duan/20170316163647-bb85.jpg')}});">
+                         style="background-image:url({{URL::asset($item->image)}});">
 
                     </div>
 
                     <div class="pl-3 pr-2" style="height: 72px">
                         <h5 class="">
-                            <a href="">Bán gấp căn hộ Topaz city, Full nội thất.</a>
+                            <a href="">{{$item->title}}</a>
                         </h5>
-                        <div class="tintuc-ngay"><a href="">Ngày đăng tin: 13/09/2018</a></div>
+                        <div class="tintuc-ngay"><a href="">Ngày đăng tin: {{$item->created_at}}</a></div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
 
         </div>
     </div>

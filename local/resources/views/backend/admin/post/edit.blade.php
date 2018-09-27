@@ -33,27 +33,13 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6">
-
+                {!! Form::hidden('post_type', 1) !!}
                 <strong>Tên Bài Viết:</strong>
                 {!! Form::text('title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                 <div class="form-group">
                     <strong>Chuyên Mục</strong>
                     <div class="category-info">
-                        @php
-                            $arrayCategoryItem=$data['post']->categoryitems()->get();
-                        @endphp
-                        @foreach($data['dd_categorie_posts'] as $key=>$item)
-                            <label class="check-container">
-                                {{$item['value']}}
-                                @if(in_array($item['index'],explode(',',$arrayCategoryItem->implode('id',','))))
-                                    {{ Form::checkbox('list_category_id[]', $item['index'], true, array('class' => '')) }}
-                                    <span class="check-mark"></span>
-                                @else
-                                    {{ Form::checkbox('list_category_id[]', $item['index'], false, array('class' => '')) }}
-                                    <span class="check-mark"></span>
-                                @endif
-                            </label>
-                        @endforeach
+
                     </div>
                 </div>
                 <div class="form-group">

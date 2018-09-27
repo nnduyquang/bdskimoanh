@@ -57,6 +57,28 @@
                     </div>
                 </div>
                 <div class="wrap-create-edit">
+                    <strong class="text-title-right">Thêm Hình Sản Phẩm </strong>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {!! Form::button('Thêm', array('id' => 'btnBrowseMore','class'=>'btn btn-primary')) !!}
+                        </div>
+                        <div class="form-group">
+                            <div id="add-image" class="row">
+                                @php
+                                    $listImage=explode(';',$product->sub_image);
+                                @endphp
+                                @foreach($listImage as $key=>$item)
+                                    <div class="col-md-3 text-center one-image">
+                                        {{ Html::image($item,'',array('id'=>'showHinh','class'=>'image-choose'))}}
+                                        {{ Form::hidden('image-choose[]', $item) }}
+                                        <span class='remove-image'>X</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-create-edit">
                     <strong class="text-title-right">Loại Sản Phẩm</strong>
                     <div class="category-info">
                         @include('backend.admin.product.list-select-option-edit')
