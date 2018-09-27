@@ -122,4 +122,8 @@ class Product extends Model
         return $this->orderBy($order)->get();
     }
 
+    public function findProductByPath($path){
+        return $this->wherePath($path)->first();
+    }
+
 }

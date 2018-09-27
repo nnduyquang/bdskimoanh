@@ -68,5 +68,17 @@ class FrontendRepository implements FrontendRepositoryInterface
         return $data;
     }
 
+    public function getDuAnDetail($path)
+    {
+        $product=new Product();
+        return $product->findProductByPath($path);
+    }
+
+    public function getDetailTinTuc($path)
+    {
+        $post=new Post();
+        return $post->findPostByPath($path);
+    }
+
 
 }

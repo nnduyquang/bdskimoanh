@@ -33,6 +33,14 @@ class FrontendController extends Controller
             'wards' => $data['wards']
         ]);
     }
+    public function getDuAnDetail($path){
+        $data = $this->frontendRepository->getDuAnDetail($path);
+        return view('frontend.product-details.index', compact('data'));
+    }
+    public function getDetailTinTuc($path){
+        $data = $this->frontendRepository->getDetailTinTuc($path);
+        return view('frontend.news-details.index', compact('data'));
+    }
 
 }
 

@@ -123,7 +123,7 @@
 
                     <div class="pl-3 pr-2" style="height: 72px">
                         <h5 class="">
-                            <a href="">{{$item->title}}</a>
+                            <a href="{{URL::to('tin-tuc/'.$item->path)}}">{{$item->title}}</a>
                         </h5>
                         <div class="tintuc-ngay"><a href="">Ngày đăng tin: {{$item->created_at}}</a></div>
                     </div>

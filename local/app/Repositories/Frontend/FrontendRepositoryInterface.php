@@ -13,4 +13,8 @@ interface FrontendRepositoryInterface
     public function getAllMenuFrontend();
 
     public function getFrontEndInfo();
+
+    public function getDuAnDetail($path);
+
+    public function getDetailTinTuc($path);
 }

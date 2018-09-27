@@ -8,7 +8,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  line-height: 1.2;
   vertical-align: baseline;
 }
 
@@ -571,10 +571,6 @@ This class is added to the container
   color: #1f648b;
   margin-bottom: 6px;
   font-weight: bold;
-}
-
-#pd_1 span {
-  font-size: 13px;
 }
 
 #pd_1 h2.khu-vuc {

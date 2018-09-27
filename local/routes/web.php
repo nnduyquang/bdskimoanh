@@ -1,16 +1,12 @@
 ﻿<?php
 
 
-//Route::get('/', function () {
-//    return view('frontend.home.index');
-//});
+
 Route::get('/', 'FrontendController@getFrontend');
 Route::post('/getAllDistrictsByCity', 'FrontendController@getAllDistrictsByCity');
 Route::post('/getAllWardsByDistrict', 'FrontendController@getAllWardsByDistrict');
 
-Route::get('/duan-chitiet.html', function () {
-    return view('frontend.product-details.index');
-});
+Route::get('/du-an/{path}', 'FrontendController@getDuAnDetail');
 
 Route::get('/duan.html', function () {
     return view('frontend.products.index');
@@ -27,6 +23,7 @@ Route::get('/tuyen-dung.html', function () {
 Route::get('/tin-tuc-chi-tiet.html', function () {
     return view('frontend.news-details.index');
 });
+Route::get('/tin-tuc/{path}', 'FrontendController@getDetailTinTuc');
 
 Route::get('/trang-tin.html', function () {
     return view('frontend.page.index');
