@@ -70,7 +70,7 @@
     }
 
     #r_n_n .right-nav-quan .right-nav-tintuc .tintuc-img {
-        width: 128px;
+        width: 108px!important;
         height: 78px;
         background-position: center center;
         -webkit-background-size: cover;
@@ -107,140 +107,10 @@
 
 </style>
 <div id="r_n_n">
-    <div class="col-12 mb-4">
-        <h4>
-            TIN TỨC LIÊN QUAN
-        </h4>
 
-        <div class="right-nav-quan border border-top-0 p-2">
-
-            @foreach($listFrontEndInfo['posts'] as $key=>$item)
-                <div class="right-nav-tintuc d-flex align-items-center">
-                    <div class="tintuc-img"
-                         style="background-image:url({{URL::asset($item->image)}});">
-
-                    </div>
-
-                    <div class="pl-3 pr-2" style="height: 72px">
-                        <h5 class="">
-                            <a href="{{URL::to('tin-tuc/'.$item->path)}}">{{$item->title}}</a>
-                        </h5>
-                        <div class="tintuc-ngay"><a href="">Ngày đăng tin: {{$item->created_at}}</a></div>
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-    <div class="col-12 mb-4">
-        <h4>
-            BẤT ĐỘNG SẢN THEO KHU VỰC
-        </h4>
-
-        <div class="right-nav-content border border-top-0 p-4">
-            <ul>
-                <li><a href="#">Thành Phố Mới</a></li>
-                <li><a href="#">Bến Cát</a></li>
-                <li><a href="#">Mỹ Phước</a></li>
-                <li><a href="#">VSIP</a></li>
-                <li><a href="#">Tp. Thủ Dầu Một</a></li>
-                <li><a href="#">Tân Hòa</a></li>
-                <li><a href="#">Bửu Hòa</a></li>
-                <li><a href="#">Nhơn Trạch</a></li>
-                <li><a href="#">Cát Lái</a></li>
-                <li><a href="#">Phú Mỹ</a></li>
-                <li><a href="#">Bà Rịa</a></li>
-                <li><a href="#">Long Thành</a></li>
-                <li><a href="#">Dầu Dây</a></li>
-                <li><a href="#">Trảng Bom</a></li>
-                <li><a href="#">Hóa An</a></li>
-                <li><a href="#">Dĩ An</a></li>
+    @include('frontend.common.menu-r.mnr_3')
+    @include('frontend.common.menu-r.mnr_1')
+    @include('frontend.common.menu-r.mnr_2')
 
 
-            </ul>
-        </div>
-    </div>
-
-    {{--<div class="col-12 mb-4">--}}
-    {{--<h4>--}}
-    {{--QUẬN 1--}}
-    {{--</h4>--}}
-
-    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
-    {{--<ul>--}}
-
-    {{--@for ($i = 0; $i < 5; $i++)--}}
-    {{--<li><a href="">Chung cư tại Indochina Park Tower</a></li>--}}
-    {{--@endfor--}}
-
-    {{--</ul>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
-    {{--<div class="col-12 mb-4">--}}
-    {{--<h4>--}}
-    {{--QUẬN TÂN PHÚ--}}
-    {{--</h4>--}}
-
-    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
-    {{--<ul>--}}
-
-    {{--@for ($i = 0; $i < 6; $i++)--}}
-    {{--<li><a href="">Bán căn hộ chung cư tại Âu Cơ Tower</a></li>--}}
-    {{--@endfor--}}
-
-    {{--</ul>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
-    {{--<div class="col-12 mb-4">--}}
-    {{--<h4>--}}
-    {{--QUẬN 7--}}
-    {{--</h4>--}}
-
-    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
-    {{--<ul>--}}
-
-    {{--@for ($i = 0; $i < 5; $i++)--}}
-    {{--<li><a href="">Căn hộ chung cư tại Phường Phú Mỹ</a></li>--}}
-    {{--@endfor--}}
-
-    {{--</ul>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
-    {{--<div class="col-12 mb-4">--}}
-    {{--<h4>--}}
-    {{--BÌNH THẠNH--}}
-    {{--</h4>--}}
-
-    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
-    {{--<ul>--}}
-
-    {{--@for ($i = 0; $i < 8; $i++)--}}
-    {{--<li><a href="">Bán căn hộ chung cư tại Chung cư Mỹ Đức 123123</a></li>--}}
-    {{--@endfor--}}
-
-    {{--</ul>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-
-
-    <div class="col-12 mb-4">
-        <h4>
-            LIÊN KẾT
-        </h4>
-
-        <div class="right-nav-quan border border-top-0 p-4">
-            <ul>
-                <li><a href="#">Cho Thuê Nhà Quận Phú Nhuận</a></li>
-                <li><a href="#">Cho Thuê Nhà Quận Gò Vấp</a></li>
-                <li><a href="#">Cho Thuê Nhà Thủ Dầu Một</a></li>
-                <li><a href="#">Bán Đất Quận 9</a></li>
-                <li><a href="#">Căn Hộ VinGroup</a></li>
-                <li><a href="#">Bán Đất Phú Quốc</a></li>
-            </ul>
-        </div>
-    </div>
 </div>

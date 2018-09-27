@@ -16,7 +16,6 @@
 
         <div class="items-duan">
             <div class="row">
-
                 <div class="col-md-3">
                     <div class="img-duan"
                          style="background-image:url({{URL::asset($item->image)}});">
