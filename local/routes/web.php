@@ -12,12 +12,20 @@ Route::get('/duan.html', function () {
     return view('frontend.products.index');
 });
 
+Route::get('/tim-kiem-du-an.html', function () {
+    return view('frontend.search.index');
+});
+
 Route::get('/tin-tuc.html', function () {
     return view('frontend.news.index');
 });
 
 Route::get('/tuyen-dung.html', function () {
     return view('frontend.tuyendung.index');
+});
+
+Route::get('/tuyen-dung-chi-tiet.html', function () {
+    return view('frontend.tuyendung-details.index');
 });
 
 Route::get('/tin-tuc-chi-tiet.html', function () {

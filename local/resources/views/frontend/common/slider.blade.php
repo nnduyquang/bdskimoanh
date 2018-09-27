@@ -49,6 +49,10 @@
         font-size: 14px;
     }
 
+    #search_box .btn-timkiem a{
+        color: white;
+    }
+
     #search_box .btn-timkiem:hover {
         background-color: #144381;
     }
@@ -128,7 +132,7 @@
                         </div>
 
                         <div class="col-md-4 text-left">
-                            <button class="btn-timkiem">Tìm kiếm</button>
+                            <button class="btn-timkiem"><a href="{{URL::asset('tim-kiem-du-an.html')}}">Tìm kiếm</a></button>
                         </div>
 
 
