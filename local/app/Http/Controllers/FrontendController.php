@@ -41,6 +41,14 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getDetailTinTuc($path);
         return view('frontend.news-details.index', compact('data'));
     }
+    public function getAllTintuc(){
+        $data = $this->frontendRepository->getAllTintuc();
+        return view('frontend.news.index', compact('data'));
+    }
+    public function getAllDuAn(){
+        $data = $this->frontendRepository->getAllDuAn();
+        return view('frontend.products.index', compact('data'));
+    }
 
 }
 

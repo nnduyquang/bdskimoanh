@@ -118,8 +118,8 @@ class Product extends Model
         return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d-m-Y');
     }
 
-    public function getAllProductsOderBy($order){
-        return $this->orderBy($order)->get();
+    public function getAllProductsOrderBy($order){
+        return $this->where('is_active',ACTIVE)->orderBy($order)->get();
     }
 
     public function findProductByPath($path){

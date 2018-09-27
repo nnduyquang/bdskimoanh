@@ -14,26 +14,24 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $data = [];
         $location = new Location();
-
         $cities = $location->getAllCities();
         $data['cities'] = $cities;
-        $product=new Product();
-        $products=$product->getAllProductsOderBy('order');
-        foreach ($products as $key=>$item){
-            $item->stringLocation=$location->getStringLocatationById($item->location_id);
-
+        $product = new Product();
+        $products = $product->getAllProductsOrderBy('order');
+        foreach ($products as $key => $item) {
+            $item->stringLocation = $location->getStringLocatationById($item->location_id);
         }
-        $data['products']=$products;
+        $data['products'] = $products;
 
         return $data;
     }
 
     public function getFrontEndInfo()
     {
-        $data=[];
-        $post=new Post();
-        $posts=$post->getAllPost();
-        $data['posts']=$posts;
+        $data = [];
+        $post = new Post();
+        $posts = $post->getAllPostSidebar();
+        $data['posts'] = $posts;
         return $data;
     }
 
@@ -63,21 +61,39 @@ class FrontendRepository implements FrontendRepositoryInterface
     public function getAllMenuFrontend()
     {
         $data = [];
-        $menu=new Menu();
-        $data=$menu->getAllOrderBy('order');
+        $menu = new Menu();
+        $data = $menu->getAllOrderBy('order');
         return $data;
     }
 
     public function getDuAnDetail($path)
     {
-        $product=new Product();
+        $product = new Product();
         return $product->findProductByPath($path);
     }
 
     public function getDetailTinTuc($path)
     {
-        $post=new Post();
+        $post = new Post();
         return $post->findPostByPath($path);
+    }
+
+    public function getAllTintuc()
+    {
+        $post = new Post();
+        return $post->getAllPost();
+    }
+
+    public function getAllDuAn()
+    {
+        $product = new Product();
+        $location = new Location();
+        $products = $product->getAllProductsOrderBy('order');
+        foreach ($products as $key => $item) {
+            $item->stringLocation = $location->getStringLocatationById($item->location_id);
+
+        }
+        return $products;
     }
 
 

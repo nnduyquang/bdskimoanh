@@ -115,7 +115,7 @@
 <div id="r_n_td">
     <div class="col-12 mb-4">
         <h4>
-            TIN TỨC LIÊN QUAN
+            TIN TỨC TUYỂN DỤNG
         </h4>
 
         <div class="right-nav-quan border border-top-0 p-2">

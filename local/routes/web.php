@@ -8,17 +8,16 @@ Route::post('/getAllWardsByDistrict', 'FrontendController@getAllWardsByDistrict'
 
 Route::get('/du-an/{path}', 'FrontendController@getDuAnDetail');
 
-Route::get('/duan.html', function () {
-    return view('frontend.products.index');
-});
+//Route::get('/duan.html', function () {
+//    return view('frontend.products.index');
+//});
+Route::get('/duan.html', 'FrontendController@getAllDuAn');
 
 Route::get('/tim-kiem-du-an.html', function () {
     return view('frontend.search.index');
 });
 
-Route::get('/tin-tuc.html', function () {
-    return view('frontend.news.index');
-});
+Route::get('/tin-tuc.html','FrontendController@getAllTintuc');
 
 Route::get('/tuyen-dung.html', function () {
     return view('frontend.tuyendung.index');
@@ -28,9 +27,6 @@ Route::get('/tuyen-dung-chi-tiet.html', function () {
     return view('frontend.tuyendung-details.index');
 });
 
-Route::get('/tin-tuc-chi-tiet.html', function () {
-    return view('frontend.news-details.index');
-});
 Route::get('/tin-tuc/{path}', 'FrontendController@getDetailTinTuc');
 
 Route::get('/trang-tin.html', function () {

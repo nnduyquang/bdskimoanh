@@ -1,6 +1,6 @@
 <style>
 
-    #r_n_n h4{
+    #r_n_n h4 {
         font-size: 14px;
         color: white;
         background-color: #f68121;
@@ -12,7 +12,7 @@
         /*font-weight: bold;*/
     }
 
-    #r_n_n  .right-nav-content, #r_n_n .right-nav-quan {
+    #r_n_n .right-nav-content, #r_n_n .right-nav-quan {
         margin-top: -20px;
         background-color: #fdfcff;
     }
@@ -21,13 +21,13 @@
         list-style-type: none;
     }
 
-    #r_n_n  .right-nav-content ul li {
+    #r_n_n .right-nav-content ul li {
         position: relative;
         margin-bottom: 8px;
         padding-left: 20px;
     }
 
-    #r_n_n  .right-nav-content ul li a {
+    #r_n_n .right-nav-content ul li a {
         color: #1f648b;
         transition: .3s;
     }
@@ -36,7 +36,7 @@
         color: #f68121;
     }
 
-    #r_n_n  .right-nav-content ul li:before {
+    #r_n_n .right-nav-content ul li:before {
         content: '\f111';
         font-family: 'Font Awesome\ 5 Free';
         font-weight: 900;
@@ -49,7 +49,7 @@
         font-style: normal;
     }
 
-    #r_n_n  .right-nav-quan ul li {
+    #r_n_n .right-nav-quan ul li {
         margin-bottom: 8px;
         /*padding-left: 20px;*/
         text-overflow: ellipsis;
@@ -140,78 +140,91 @@
 
         <div class="right-nav-content border border-top-0 p-4">
             <ul>
+                <li><a href="#">Thành Phố Mới</a></li>
+                <li><a href="#">Bến Cát</a></li>
+                <li><a href="#">Mỹ Phước</a></li>
+                <li><a href="#">VSIP</a></li>
+                <li><a href="#">Tp. Thủ Dầu Một</a></li>
+                <li><a href="#">Tân Hòa</a></li>
+                <li><a href="#">Bửu Hòa</a></li>
+                <li><a href="#">Nhơn Trạch</a></li>
+                <li><a href="#">Cát Lái</a></li>
+                <li><a href="#">Phú Mỹ</a></li>
+                <li><a href="#">Bà Rịa</a></li>
+                <li><a href="#">Long Thành</a></li>
+                <li><a href="#">Dầu Dây</a></li>
+                <li><a href="#">Trảng Bom</a></li>
+                <li><a href="#">Hóa An</a></li>
+                <li><a href="#">Dĩ An</a></li>
 
-                @for ($i = 0; $i < 22; $i++)
-                    <li><a href="">Quận 1 (1234)</a></li>
-                @endfor
-
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-12 mb-4">
-        <h4>
-            QUẬN 1
-        </h4>
-
-        <div class="right-nav-quan border border-top-0 p-4">
-            <ul>
-
-                @for ($i = 0; $i < 5; $i++)
-                    <li><a href="">Chung cư tại Indochina Park Tower</a></li>
-                @endfor
 
             </ul>
         </div>
     </div>
 
-    <div class="col-12 mb-4">
-        <h4>
-            QUẬN TÂN PHÚ
-        </h4>
+    {{--<div class="col-12 mb-4">--}}
+    {{--<h4>--}}
+    {{--QUẬN 1--}}
+    {{--</h4>--}}
 
-        <div class="right-nav-quan border border-top-0 p-4">
-            <ul>
+    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
+    {{--<ul>--}}
 
-                @for ($i = 0; $i < 6; $i++)
-                    <li><a href="">Bán căn hộ chung cư tại Âu Cơ Tower</a></li>
-                @endfor
+    {{--@for ($i = 0; $i < 5; $i++)--}}
+    {{--<li><a href="">Chung cư tại Indochina Park Tower</a></li>--}}
+    {{--@endfor--}}
 
-            </ul>
-        </div>
-    </div>
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="col-12 mb-4">
-        <h4>
-            QUẬN 7
-        </h4>
+    {{--<div class="col-12 mb-4">--}}
+    {{--<h4>--}}
+    {{--QUẬN TÂN PHÚ--}}
+    {{--</h4>--}}
 
-        <div class="right-nav-quan border border-top-0 p-4">
-            <ul>
+    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
+    {{--<ul>--}}
 
-                @for ($i = 0; $i < 5; $i++)
-                    <li><a href="">Căn hộ chung cư tại Phường Phú Mỹ</a></li>
-                @endfor
+    {{--@for ($i = 0; $i < 6; $i++)--}}
+    {{--<li><a href="">Bán căn hộ chung cư tại Âu Cơ Tower</a></li>--}}
+    {{--@endfor--}}
 
-            </ul>
-        </div>
-    </div>
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="col-12 mb-4">
-        <h4>
-            BÌNH THẠNH
-        </h4>
+    {{--<div class="col-12 mb-4">--}}
+    {{--<h4>--}}
+    {{--QUẬN 7--}}
+    {{--</h4>--}}
 
-        <div class="right-nav-quan border border-top-0 p-4">
-            <ul>
+    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
+    {{--<ul>--}}
 
-                @for ($i = 0; $i < 8; $i++)
-                    <li><a href="">Bán căn hộ chung cư tại Chung cư Mỹ Đức 123123</a></li>
-                @endfor
+    {{--@for ($i = 0; $i < 5; $i++)--}}
+    {{--<li><a href="">Căn hộ chung cư tại Phường Phú Mỹ</a></li>--}}
+    {{--@endfor--}}
 
-            </ul>
-        </div>
-    </div>
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+
+    {{--<div class="col-12 mb-4">--}}
+    {{--<h4>--}}
+    {{--BÌNH THẠNH--}}
+    {{--</h4>--}}
+
+    {{--<div class="right-nav-quan border border-top-0 p-4">--}}
+    {{--<ul>--}}
+
+    {{--@for ($i = 0; $i < 8; $i++)--}}
+    {{--<li><a href="">Bán căn hộ chung cư tại Chung cư Mỹ Đức 123123</a></li>--}}
+    {{--@endfor--}}
+
+    {{--</ul>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
 
     <div class="col-12 mb-4">
@@ -221,11 +234,12 @@
 
         <div class="right-nav-quan border border-top-0 p-4">
             <ul>
-
-                @for ($i = 0; $i < 10; $i++)
-                    <li><a href="">Cho thuê phòng trọ Quận 7</a></li>
-                @endfor
-
+                <li><a href="#">Cho Thuê Nhà Quận Phú Nhuận</a></li>
+                <li><a href="#">Cho Thuê Nhà Quận Gò Vấp</a></li>
+                <li><a href="#">Cho Thuê Nhà Thủ Dầu Một</a></li>
+                <li><a href="#">Bán Đất Quận 9</a></li>
+                <li><a href="#">Căn Hộ VinGroup</a></li>
+                <li><a href="#">Bán Đất Phú Quốc</a></li>
             </ul>
         </div>
     </div>

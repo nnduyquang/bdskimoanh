@@ -17,4 +17,8 @@ interface FrontendRepositoryInterface
     public function getDuAnDetail($path);
 
     public function getDetailTinTuc($path);
+
+    public function getAllTintuc();
+
+    public function getAllDuAn();
 }

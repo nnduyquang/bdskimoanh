@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-md-8" id="">
                     @include('frontend.news-details.nd_2')
-                    @include('frontend.news-details.nd_1')
+                    {{--@include('frontend.news-details.nd_1')--}}
                 </div>
 
                 <div class="col-md-4">
