@@ -100,7 +100,7 @@ img {
   transition: all .5s;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
-  border-color: #00aff2;
+  border-color: #ee6e00;
 }
 
 .phone_animation_circle_fill {
@@ -109,7 +109,7 @@ img {
   top: 50px;
   left: 50px;
   position: absolute;
-  background-color: #00aff2;
+  background-color: #ee6e00;
   border-radius: 100%;
   border: 2px solid transparent;
   opacity: .2;
@@ -134,7 +134,7 @@ img {
           animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
-  background-color: #00afef;
+  background-color: #ee6e00;
   text-align: center;
   line-height: 60px;
   color: #FFF;
@@ -350,7 +350,6 @@ img {
 }
 
 .sidebar .background-sidebar {
-  background-image: url(../images/logo/logo_footer.png);
   height: calc(56px*4);
   background-repeat: no-repeat;
   background-size: contain;
