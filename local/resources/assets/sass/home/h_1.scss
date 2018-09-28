@@ -1,5 +1,12 @@
 #h_1 {
 
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   h4 {
     font-size: 15px;
     color: white;
@@ -9,21 +16,31 @@
     /*font-weight: 600;*/
     border-radius: 4px 4px 0px 0px;
     margin-bottom: 20px;
-    //font-weight: bold;
+
   }
   .items-duan {
     margin-bottom: 30px;
-    .img-duan {
-      width: 200px;
-      height: 138px;
-      background-position: center center;
-      -webkit-background-size: cover;
-      background-size: cover;
-      background-repeat: no-repeat;
-      overflow: hidden;
-    }
+      .img-overlay {
+        width: 200px;
+        height: 138px;
+        overflow: hidden;
+        .img-duan {
+          width: 100%;
+          height: 100%;
+          background-position: center center;
+          -webkit-background-size: cover;
+          background-size: cover;
+          background-repeat: no-repeat;
+          transition: .3s;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
     .tt-duan {
       padding: 0 26px;
+      min-height: 138px;
+      border-bottom: 1px solid #dbdbdb;
       p {
         color: #6f6d6b;
         font-size: 14px;
@@ -37,38 +54,50 @@
         width: 100%;
         text-align: right;
         a {
-          color: #144381;
+          color: #099fed;
         }
       }
 
     }
     h5 {
 
-      font-family: 'Archivo', sans-serif !important;
+      font-family: 'Roboto', sans-serif !important;
       padding-top: 3px;
       font-size: 15px;
       line-height: 20px;
-      //font-weight: 600;
+      font-weight: bold;
       padding-bottom: 12px;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       a {
         color: #007bff;
         transition: .3s;
+        &:hover {
+          color: #f68121;
+        }
       }
-      &:hover {
-        color: #f68121;
-      }
+
     }
   }
 }
 
-
 @media only screen and (max-width: 800px) {
 
-  #h_1 .items-duan .img-duan {
-    width: 90%;
-    margin: auto;
-    height: 186px;
-    margin-bottom: 10px;
-  }
+  #h_1 {
+    .items-duan {
+      .tt-duan {
+        height: auto;
+      }
 
+      .img-duan {
+        width: 90%;
+        margin: auto;
+        height: 186px;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

@@ -3,6 +3,33 @@ var plugins = {
     slider: $('#slider'),
 };
 $(document).ready(function () {
+
+    $('#owl_slider').owlCarousel({
+        animateOut: 'fadeOut slow',
+        animateIn: 'fadeIn slow',
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1,
+                dots: false,
+            },
+            600: {
+                items: 1,
+                dots: false,
+            },
+            1000: {
+                items: 1,
+                dots: false,
+            }
+        }
+    });
+
     function sidebar() {
         var trigger = $('#trigger,#close');
         trigger.on('click', function () {

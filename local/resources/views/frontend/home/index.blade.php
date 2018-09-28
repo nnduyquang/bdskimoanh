@@ -19,6 +19,7 @@
 @stop
 @section('slider')
 @include('frontend.common.slider')
+@include('frontend.common.m-slider')
 @stop
 @section('container')
     <div class="container-fluid mt-3" id="h_1">

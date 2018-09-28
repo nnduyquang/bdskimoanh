@@ -113,7 +113,7 @@
 
 </style>
 <div id="r_n_td">
-    <div class="col-12 mb-4">
+    <div class="col-12 mb-4 p-0">
         <h4>
             TIN TỨC TUYỂN DỤNG
         </h4>
@@ -132,7 +132,7 @@
                             <a href="">Bán gấp căn hộ Topaz city, Full nội thất.</a>
                         </h5>
                         <h6>Lương: Thỏa thuận</h6>
-                        <div class="tintuc-ngay"><a href="">Ngày đăng tin: 13/09/2018</a></div>
+                        <div class="tintuc-ngay"><a href="">Post:13/09/2018</a></div>
                     </div>
                 </div>
             @endfor

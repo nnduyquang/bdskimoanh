@@ -1,4 +1,4 @@
-<div class="col-12 mb-4">
+<div class="col-12 mb-4 p-0">
     <h4>
         TIN TỨC LIÊN QUAN
     </h4>
@@ -7,7 +7,7 @@
 
         @foreach($listFrontEndInfo['posts'] as $key=>$item)
             <div class="right-nav-tintuc d-flex ">
-                <a href="">
+                <a href="{{URL::to('tin-tuc/'.$item->path)}}">
                     <div class="tintuc-img mr-3"
                          style="background-image:url({{URL::asset($item->image)}});width: 108px!important;">
                         <div style="min-width: 100px"></div>
