@@ -60,7 +60,7 @@
 </style>
 
 
-<div class="bg-slider container-fluid">
+<div class="bg-slider container-fluid d-lg-block d-md-block d-none">
     <div class="container">
 
         <div id="search_box">

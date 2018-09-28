@@ -1,4 +1,4 @@
-<div class="col-12 mb-4">
+<div class="col-12 mb-4 p-0">
     <h4>
         LIÊN KẾT
     </h4>

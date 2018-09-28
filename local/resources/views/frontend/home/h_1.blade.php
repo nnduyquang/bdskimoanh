@@ -6,14 +6,18 @@
     </h4>
     @foreach($data['products'] as $key=>$item)
         <div class="items-duan">
-            <div class="row">
+            <div class="row row-eq-height">
                 <div class="col-md-3">
-                    <a href=""><div class="img-duan"
-                         style="background-image:url({{URL::asset($item->image)}});">
-                    </div></a>
+                    <a href="{{URL::to('/du-an/'.$item->path)}}">
+                        <div class="img-overlay">
+                            <div class="img-duan"
+                                 style="background-image:url({{URL::asset($item->image)}});">
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-9">
-                    <div class="tt-duan">
+                    <div class="tt-duan ml-lg-3 m-0">
                         <h5><a href="{{URL::to('/du-an/'.$item->path)}}">{{$item->name}}</a></h5>
                         <div class="d-flex">
                             <p>Mức giá : </p>
@@ -36,7 +40,7 @@
                             <p>{{$item->stringLocation}}</p>
                         </div>
                         <div>
-                            <p class="tt-ngaydangtin border-bottom pb-2">
+                            <p class="tt-ngaydangtin pb-2">
                                 <a href="">Ngày đăng tin: {{$item->created_at}}</a>
                             </p>
                         </div>

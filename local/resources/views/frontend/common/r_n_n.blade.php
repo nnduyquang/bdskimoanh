@@ -84,9 +84,14 @@
     }
 
     #r_n_n .right-nav-quan .right-nav-tintuc h5 {
-        /*font-weight: bold;*/
+        font-family: 'Roboto', sans-serif!important;
         font-size: 15px !important;
         margin-bottom: 8px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     #r_n_n .right-nav-quan .right-nav-tintuc h5 a {

@@ -30,17 +30,27 @@
 
   .items-duan {
     margin-bottom: 30px;
-    .img-duan {
+    .img-overlay {
       width: 200px;
       height: 138px;
-      background-position: center center;
-      -webkit-background-size: cover;
-      background-size: cover;
-      background-repeat: no-repeat;
       overflow: hidden;
+      .img-duan {
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: .3s;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
     }
     .tt-duan {
       padding: 0 26px;
+      min-height: 138px!important;
+      border-bottom: 1px solid #dbdbdb;
       p {
         color: #6f6d6b;
         font-size: 14px;
@@ -61,12 +71,11 @@
       }
     }
     h5 {
-
-      font-family: 'Archivo', sans-serif !important;
+      font-family: 'Roboto', sans-serif!important;
       padding-top: 3px;
       font-size: 15px;
       line-height: 20px;
-      //font-weight: 600;
+      font-weight: bold;
       padding-bottom: 12px;
       a {
         color: #007bff;

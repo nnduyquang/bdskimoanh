@@ -4,7 +4,7 @@
         TUYỂN DỤNG BẤT ĐỘNG SẢN
     </h4>
 
-    <div class="row drop-sort" data-class="">
+    <div class="row drop-sort">
         <div class="col-md-12">
             <p class="mb-1">Tìm kiếm theo các tiêu chí: Loại BDS: <span>Bán căn hộ chung cư</span>. Tỉnh/Tp: <span>Tp.HCM</span>.
                 Quận/Huyện: <span>Quận 1</span>. Có 890 bất động sản.</p>
@@ -17,13 +17,14 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <a href=""><div class="img-duan"
+                    <a href=""><div class="img-overlay"><div class="img-duan"
                          style="background-image:url({{URL::asset('images/duan/20170316163647-bb85.jpg')}});">
                     </div>
+                        </div>
                     </a>
                 </div>
                 <div class="col-md-9">
-                    <div class="tt-duan">
+                    <div class="tt-duan ml-lg-3 m-0">
                         <h5><a href="{{URL::asset('tuyen-dung-chi-tiet.html')}}">Bán gấp căn hộ Topaz city, Full nội thất,
                                 55m2 giá 1,45 tỷ xem ngay,
                                 liên hệ với
@@ -43,7 +44,7 @@
                         </div>
 
                         <div>
-                            <p class="tt-ngaydangtin border-bottom pb-2">
+                            <p class="tt-ngaydangtin">
                                 <a href="">Ngày đăng tin: 13/09/2018</a>
                             </p>
                         </div>
@@ -55,9 +56,9 @@
     @endfor
 
 
-    <div class="row">
-        <div class="col-12">
-            <nav aria-label="Page navigation example">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <nav class="text-center" aria-label="Page navigation example" style="width: 100%;margin: auto">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                     <li class="page-item"><a class="page-link" href="#">1</a></li>

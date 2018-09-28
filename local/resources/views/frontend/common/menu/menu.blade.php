@@ -100,7 +100,7 @@
                         <ul>
                             <li>
                                 <a href="{{URL::asset('/')}}">
-                                    <img src="{{URL::asset('images/logo/logo2.jpg')}}" alt="KIM OANH GROUP BẤT ĐỘNG SẢN">
+                                    <img src="{{URL::asset('images/logo/284x68_fw_vi_logo.png')}}" alt="KIM OANH GROUP BẤT ĐỘNG SẢN">
                                 </a>
                             </li>
                         </ul>

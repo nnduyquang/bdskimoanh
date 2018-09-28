@@ -1,4 +1,4 @@
-<div class="col-12 mb-4">
+<div class="col-12 mb-4 p-0">
     <h4>
         BẤT ĐỘNG SẢN THEO KHU VỰC
     </h4>
