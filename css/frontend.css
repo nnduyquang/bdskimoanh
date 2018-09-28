@@ -586,7 +586,7 @@ This class is added to the container
   #h_1 .items-duan .tt-duan {
     height: auto;
   }
-  #h_1 .items-duan .img-duan {
+  #h_1 .items-duan .img-overlay {
     width: 90%;
     margin: auto;
     height: 186px;
@@ -963,7 +963,10 @@ This class is added to the container
 }
 
 @media only screen and (max-width: 800px) {
-  #n_2 .items-duan .img-duan {
+  #n_2 .items-duan .tt-duan {
+    height: auto;
+  }
+  #n_2 .items-duan .img-overlay {
     width: 90%;
     margin: auto;
     height: 186px;
@@ -1071,7 +1074,10 @@ This class is added to the container
 }
 
 @media only screen and (max-width: 800px) {
-  #p_1 .items-duan .img-duan {
+  #p_1 .items-duan .tt-duan {
+    height: auto;
+  }
+  #p_1 .items-duan .img-overlay {
     width: 90%;
     margin: auto;
     height: 186px;
