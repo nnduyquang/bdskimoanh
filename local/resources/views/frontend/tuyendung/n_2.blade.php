@@ -1,11 +1,11 @@
 
-<div id="n_2">
+<div id="n_2" class="mt-1">
     <h4>
         TUYỂN DỤNG BẤT ĐỘNG SẢN
     </h4>
 
     <div class="row drop-sort">
-        <div class="col-md-12">
+        <div class="col-md-12 mt-3">
             <p class="mb-1">Tìm kiếm theo các tiêu chí: Loại BDS: <span>Bán căn hộ chung cư</span>. Tỉnh/Tp: <span>Tp.HCM</span>.
                 Quận/Huyện: <span>Quận 1</span>. Có 890 bất động sản.</p>
         </div>

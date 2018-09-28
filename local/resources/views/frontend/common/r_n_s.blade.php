@@ -106,7 +106,7 @@
 <div id="r_n_s">
     <div class="row">
 
-        <div class="col-12 mb-4 p-0">
+        <div class="col-12 mb-4 p-lg-1 p-0">
 
             <div class="right-nav-timkiem border p-3">
                 <h6>

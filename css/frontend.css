@@ -506,7 +506,7 @@ This class is added to the container
   text-align: center;
   /*font-weight: 600;*/
   border-radius: 4px 4px 0px 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #h_1 .items-duan {
@@ -584,10 +584,11 @@ This class is added to the container
 
 @media only screen and (max-width: 800px) {
   #h_1 .items-duan .tt-duan {
+    padding: 0px;
     height: auto;
   }
   #h_1 .items-duan .img-overlay {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 186px;
     margin-bottom: 10px;
@@ -861,7 +862,6 @@ This class is added to the container
   text-align: center;
   /*font-weight: 600;*/
   border-radius: 4px 4px 0px 0px;
-  margin-bottom: 20px;
 }
 
 #n_2 .items-duan {
@@ -964,10 +964,11 @@ This class is added to the container
 
 @media only screen and (max-width: 800px) {
   #n_2 .items-duan .tt-duan {
+    padding: 0px;
     height: auto;
   }
   #n_2 .items-duan .img-overlay {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 186px;
     margin-bottom: 10px;
@@ -982,7 +983,7 @@ This class is added to the container
   text-align: center;
   /*font-weight: 600;*/
   border-radius: 4px 4px 0px 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #p_1 .drop-sort {
@@ -1075,12 +1076,59 @@ This class is added to the container
 
 @media only screen and (max-width: 800px) {
   #p_1 .items-duan .tt-duan {
+    padding: 0px;
     height: auto;
   }
   #p_1 .items-duan .img-overlay {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 186px;
     margin-bottom: 10px;
+  }
+}
+
+#banner-title {
+  min-height: 38vh;
+  width: 100%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+#banner-title:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+#banner-title h5 {
+  font-family: 'Roboto', sans-serif;
+  z-index: 1;
+  font-size: 32px;
+  color: white;
+  width: 100%;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 800px) {
+  #banner-title {
+    min-height: 28vh;
+  }
+  #banner-title h5 {
+    font-weight: normal;
+    font-size: 23px;
   }
 }

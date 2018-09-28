@@ -1,12 +1,12 @@
 <style>
 </style>
-<div id="h_1">
+<div id="h_1" class="mt-1">
     <h4>
         TẤT CẢ BẤT ĐỘNG SẢN
     </h4>
     @foreach($data['products'] as $key=>$item)
         <div class="items-duan">
-            <div class="row row-eq-height">
+            <div class="row">
                 <div class="col-md-3">
                     <a href="{{URL::to('/du-an/'.$item->path)}}">
                         <div class="img-overlay">
