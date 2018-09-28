@@ -23,9 +23,9 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <div class="img-duan"
+                    <a href=""><div class="img-duan"
                          style="background-image:url({{URL::asset('images/duan/20170316163647-bb85.jpg')}});">
-                    </div>
+                    </div></a>
 
                 </div>
                 <div class="col-md-9">

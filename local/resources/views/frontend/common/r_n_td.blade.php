@@ -122,10 +122,10 @@
 
             @for ($i = 0; $i < 5; $i++)
                 <div class="right-nav-tintuc d-flex align-items-center">
-                    <div class="tintuc-img"
+                    <a href=""><div class="tintuc-img"
                          style="background-image:url({{URL::asset('images/duan/20170316163647-bb85.jpg')}});">
 
-                    </div>
+                    </div></a>
 
                     <div class="pl-3 pr-2" style="height: 72px">
                         <h5 class="">

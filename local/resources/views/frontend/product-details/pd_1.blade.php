@@ -41,10 +41,10 @@
 
                     <div class="owl-items d-flex flex-md-row flex-column justify-content-lg-start justify-content-center align-items-center">
                         <div class="owl-img">
-                            <img src="{{URL::asset('https://khangdiengroup.com.vn/wp-content/uploads/2018/08/D%E1%BB%B1-%C3%A1n-C%C4%83n-h%E1%BB%99-Lovera-Vista-B%C3%ACnh-Ch%C3%A1nh.jpg')}}"
+                            <a href=""><img src="{{URL::asset('https://khangdiengroup.com.vn/wp-content/uploads/2018/08/D%E1%BB%B1-%C3%A1n-C%C4%83n-h%E1%BB%99-Lovera-Vista-B%C3%ACnh-Ch%C3%A1nh.jpg')}}"
                                  alt=""
                                  style="height: 100%;max-height: 300px;width: auto;margin: auto">
-
+                            </a>
                         </div>
                     </div>
 

@@ -21,9 +21,9 @@
         <div class="items-duan">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="img-duan"
+                    <a href=""><div class="img-duan"
                          style="background-image:url({{URL::asset($item->image)}});">
-                    </div>
+                    </div></a>
                 </div>
                 <div class="col-md-9">
                     <div class="tt-duan">
