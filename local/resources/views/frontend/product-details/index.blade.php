@@ -24,14 +24,14 @@
     <div class="container-fluid mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-8" id="">
+                <div class="col-md-8 p-lg-1 p-0" id="">
                     @include('frontend.product-details.pd_1')
                     @include('frontend.product-details.pd_2')
                     @include('frontend.product-details.pd_3')
                     @include('frontend.product-details.pd_4')
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 p-lg-1 p-0">
                     @include('frontend.common.r_n_s')
                 </div>
             </div>
