@@ -3,19 +3,6 @@
         TẤT CẢ BẤT ĐỘNG SẢN
     </h4>
 
-    {{--<div class="row drop-sort" data-class="">--}}
-        {{--<div class="col-md-12">--}}
-            {{--<p class="mb-3">Tìm kiếm theo các tiêu chí: Loại BDS: <span>Bán căn hộ chung cư</span>. Tỉnh/Tp: <span>Tp.HCM</span>.--}}
-                {{--Quận/Huyện: <span>Quận 1</span>. Có 890 bất động sản.</p>--}}
-            {{--<select class="form-control" id="sel1">--}}
-                {{--<option selected>Thông thường</option>--}}
-                {{--<option>Giá thấp tới cao</option>--}}
-                {{--<option>Giá cao tới thấp</option>--}}
-                {{--<option>Diện tích lớn nhất</option>--}}
-                {{--<option>Diện tích nhỏ nhất</option>--}}
-            {{--</select>--}}
-        {{--</div>--}}
-    {{--</div>--}}
 @foreach($data as $key=>$item)
 
         <div class="items-duan">

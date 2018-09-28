@@ -1,4 +1,4 @@
-<div class="col-12 mb-4 p-0">
+<div class="col-12 mb-4 p-lg-1 p-0">
     <h4>
         TIN TỨC LIÊN QUAN
     </h4>

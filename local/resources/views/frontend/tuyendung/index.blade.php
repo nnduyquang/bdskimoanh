@@ -24,11 +24,11 @@
     <div class="container-fluid mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-8" id="">
+                <div class="col-md-8 p-lg-1 p-0" id="">
                     @include('frontend.tuyendung.n_2')
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 p-lg-1 p-0">
                     @include('frontend.common.r_n_n')
                 </div>
             </div>

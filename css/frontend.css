@@ -506,7 +506,7 @@ This class is added to the container
   text-align: center;
   /*font-weight: 600;*/
   border-radius: 4px 4px 0px 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #h_1 .items-duan {
@@ -584,10 +584,11 @@ This class is added to the container
 
 @media only screen and (max-width: 800px) {
   #h_1 .items-duan .tt-duan {
+    padding: 0px;
     height: auto;
   }
   #h_1 .items-duan .img-overlay {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 186px;
     margin-bottom: 10px;
@@ -861,7 +862,6 @@ This class is added to the container
   text-align: center;
   /*font-weight: 600;*/
   border-radius: 4px 4px 0px 0px;
-  margin-bottom: 20px;
 }
 
 #n_2 .items-duan {
@@ -964,10 +964,11 @@ This class is added to the container
 
 @media only screen and (max-width: 800px) {
   #n_2 .items-duan .tt-duan {
+    padding: 0px;
     height: auto;
   }
   #n_2 .items-duan .img-overlay {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 186px;
     margin-bottom: 10px;
@@ -982,7 +983,7 @@ This class is added to the container
   text-align: center;
   /*font-weight: 600;*/
   border-radius: 4px 4px 0px 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #p_1 .drop-sort {
@@ -1075,10 +1076,11 @@ This class is added to the container
 
 @media only screen and (max-width: 800px) {
   #p_1 .items-duan .tt-duan {
+    padding: 0px;
     height: auto;
   }
   #p_1 .items-duan .img-overlay {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 186px;
     margin-bottom: 10px;

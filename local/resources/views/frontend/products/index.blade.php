@@ -25,7 +25,7 @@
     <div class="container-fluid mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 p-lg-1 p-0">
                     @include('frontend.products.p_1')
                 </div>
                 <div class="col-md-4">

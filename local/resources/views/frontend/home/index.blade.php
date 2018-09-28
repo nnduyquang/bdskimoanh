@@ -25,10 +25,10 @@
     <div class="container-fluid mt-3" id="h_1">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 p-lg-1 p-0">
                     @include('frontend.home.h_1')
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 p-lg-1 p-0">
                     @include('frontend.common.r_n_n')
                 </div>
             </div>
