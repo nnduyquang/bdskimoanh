@@ -93,7 +93,7 @@
 
     <div id="top_menu" class="container-fluid p-0 d-none d-md-block" style="background-image: url({{URL::asset('images/bg/about-bg3.png')}})">
 
-        <div class="container" id="m_1">
+        <div class="container pt-4 pb-4" id="m_1">
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-between align-items-center">
                     <div>
