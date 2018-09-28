@@ -3,6 +3,7 @@
 namespace App\Repositories\Frontend;
 
 
+use App\Direction;
 use App\Location;
 use App\Menu;
 use App\Post;
@@ -14,8 +15,9 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $data = [];
         $location = new Location();
-        $cities = $location->getAllCities();
-        $data['cities'] = $cities;
+        $direction=new Direction();
+        $data['cities'] = $location->getAllCities();
+        $data['directions']=$direction->getAllDirection();
         $product = new Product();
         $products = $product->getAllProductsOrderBy('order');
         foreach ($products as $key => $item) {

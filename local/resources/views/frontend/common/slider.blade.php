@@ -92,41 +92,60 @@
 
                         <div class="col-md-4">
                             <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Diện tích</option>
+                                <option value="-1" selected>Diện tích</option>
+                                <option value="0">Không Xác Định</option>
+                                <option value="0-30"><= 30 m2</option>
+                                <option value="30-50">30 - 50 m2</option>
+                                <option value="50-80">50 - 80 m2</option>
+                                <option value="80-100">80 - 100 m2</option>
+                                <option value="100-150">100 - 150 m2</option>
+                                <option value="150-200">150 - 200 m2</option>
+                                <option value="200-250">200 - 250 m2</option>
+                                <option value="250-300">250 - 300 m2</option>
+                                <option value="300-500">300 - 500 m2</option>
+                                <option value="500">>= 500 m2</option>
+
                             </select>
                         </div>
                         <div class="col-md-4">
                             <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Mức giá</option>
+                                <option value="-1" selected>Mức giá</option>
+                                <option value="0">Thỏa Thuận</option>
+                                <option value="0-500">< 500 triệu</option>
+                                <option value="500-800">500 - 800 triệu</option>
+                                <option value="800-1000">800 - 1 tỷ</option>
+                                <option value="1000-2000">1 - 2 tỷ</option>
+                                <option value="2000-3000">2 - 3 tỷ</option>
+                                <option value="3000-5000">3 - 5 tỷ</option>
+                                <option value="5000-7000">5 - 7 tỷ</option>
+                                <option value="7000-10000">7 - 10 tỷ</option>
+                                <option value="10000-20000">10 - 20 tỷ</option>
+                                <option value="20000-30000">20 - 30 tỷ</option>
+                                <option value="30000">> 30 tỷ</option>
+
                             </select>
                         </div>
                         <div class="col-md-4">
                             <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Số phòng ngủ</option>
+                                <option value="-1" selected>Số phòng ngủ</option>
+                                <option value="0">Không Xác Định</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                                <option value="5">5+</option>
                             </select>
                         </div>
                         <div class="col-md-4">
                             <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Hướng nhà</option>
+                                <option value="-1" selected>Hướng nhà</option>
+                                @foreach($data['directions'] as $key=>$item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-4">
                             <select>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
                                 <option value="audi" selected>Dự án</option>
                             </select>
                         </div>
