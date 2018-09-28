@@ -106,11 +106,19 @@
 
 @media only screen and (max-width: 800px) {
 
-  #n_2 .items-duan .img-duan {
-    width: 90%;
-    margin: auto;
-    height: 186px;
-    margin-bottom: 10px;
+  #n_2{
+    .items-duan {
+      .tt-duan {
+        height: auto;
+      }
+
+      .img-overlay {
+        width: 90%;
+        margin: auto;
+        height: 186px;
+        margin-bottom: 10px;
+      }
+    }
   }
 
 }
