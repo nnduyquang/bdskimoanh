@@ -23,13 +23,15 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <a href=""><div class="img-duan"
+                    <a href="">
+                        <div class="img-overlay"><div class="img-duan"
                          style="background-image:url({{URL::asset('images/duan/20170316163647-bb85.jpg')}});">
-                    </div></a>
+                    </div>
+                        </div></a>
 
                 </div>
                 <div class="col-md-9">
-                    <div class="tt-duan">
+                    <div class="tt-duan ml-lg-3 ml-0">
                         <h5><a href="{{URL::asset('duan-chitiet.html')}}">Bán gấp căn hộ Topaz city, Full nội thất, 55m2
                                 giá 1,45 tỷ xem ngay,
                                 liên hệ với
@@ -49,7 +51,7 @@
                         </div>
 
                         <div>
-                            <p class="tt-ngaydangtin border-bottom pb-2">
+                            <p class="tt-ngaydangtin">
                                 <a href="">Ngày đăng tin: 13/09/2018</a>
                             </p>
                         </div>

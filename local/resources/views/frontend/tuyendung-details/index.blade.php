@@ -18,7 +18,7 @@
     {{ Html::style('css/themes/default/default.css') }}
 @stop
 @section('slider')
-    {{--@include('frontend.common.slider')--}}
+    @include('frontend.tuyendung.banner-title')
 @stop
 @section('container')
     <div class="container-fluid mt-4">
