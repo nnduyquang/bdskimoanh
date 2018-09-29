@@ -113,17 +113,54 @@ class Product extends Model
         if (IsNullOrEmptyString($value))
             $this->attributes['order'] = 1;
     }
+
     public function getCreatedAtAttribute($date)
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d-m-Y');
     }
 
-    public function getAllProductsOrderBy($order){
-        return $this->where('is_active',ACTIVE)->orderBy($order)->get();
+    public function getAllProductsOrderBy($order)
+    {
+        return $this->where('is_active', ACTIVE)->orderBy($order)->get();
     }
 
-    public function findProductByPath($path){
+    public function findProductByPath($path)
+    {
         return $this->wherePath($path)->first();
+    }
+//    public function findProductByLocationID($id)
+//    {
+//        return $this->whereLocationId($id)->get();
+//    }
+
+    public function searchProduct($request)
+    {
+        $cityID = $request->input('select-city');
+        $districtID = $request->input('select-district');
+        $wardID = $request->input('select-ward');
+        $area = $request->input('select-area');
+        $price = $request->input('select-price');
+        $numBed = $request->input('select-num-bed');
+        $directionID = $request->input('select-direction');
+        $productID = $request->input('select-project');
+        $products = $this->query();
+        $location=new Location();
+        if ($cityID != '-1') {
+            if ($districtID != '-1') {
+                if ($wardID != '-1') {
+                    $products->where('location_id', $wardID);
+                } else{
+                    $locationChildID = $location->getAllChildById($districtID);
+                    dd();
+//                    $finalId=implode(',',$locationChildID->pluck('id')->toArray());
+                    $products->whereIn('location_id', $locationChildID->pluck('id')->toArray());
+                }
+            }else{
+                $products->where('location_id', $cityID);
+            }
+        }
+        return $products->get();
+
     }
 
 }

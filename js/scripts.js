@@ -44,7 +44,9 @@ $(document).ready(function () {
             }
         })
     }
+
     sidebar();
+
     function runSlider() {
         plugins.slider.nivoSlider({
             effect: 'fade',
@@ -54,6 +56,7 @@ $(document).ready(function () {
             controlNav: false,
         });
     }
+
     if (plugins.slider.length) {
         runSlider();
     }
@@ -108,5 +111,18 @@ $(document).ready(function () {
                 }
             }
         });
+    });
+    $('form[name=search-home]').submit(function (e) {
+        var city = $('select[name=select-city]').val();
+        var district = $('select[name=select-district]').val();
+        var ward = $('select[name=select-ward]').val();
+        var area = $('select[name=select-area]').val();
+        var price = $('select[name=select-price]').val();
+        var bed = $('select[name=select-num-bed]').val();
+        var direction = $('select[name=select-direction]').val();
+        var project = $('select[name=select-project]').val();
+        if (city == '-1' && district == '-1' && ward == '-1' && area == '-1' && price == '-1' && bed == '-1' && direction == '-1' && project == '-1') {
+            e.preventDefault();
+        }
     });
 });

@@ -69,6 +69,7 @@
                     <p class="text-white pt-2 pb-2" style="background-color:rgba(246,129,33,0.8);">TÌM KIẾM BẤT ĐỘNG
                         SẢN</p>
                 </div>
+                {!! Form::open(array('route' => 'frontend.search','method'=>'POST','name'=>'search-home')) !!}
                 <div class="col-md-12">
                     <div class="row pt-4 pb-4">
                         <div class="col-md-4">
@@ -91,7 +92,7 @@
                         </div>
 
                         <div class="col-md-4">
-                            <select>
+                            <select name="select-area">
                                 <option value="-1" selected>Diện tích</option>
                                 <option value="0">Không Xác Định</option>
                                 <option value="0-30"><= 30 m2</option>
@@ -108,7 +109,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select>
+                            <select name="select-price">
                                 <option value="-1" selected>Mức giá</option>
                                 <option value="0">Thỏa Thuận</option>
                                 <option value="0-500">< 500 triệu</option>
@@ -126,7 +127,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select>
+                            <select name="select-num-bed">
                                 <option value="-1" selected>Số phòng ngủ</option>
                                 <option value="0">Không Xác Định</option>
                                 <option value="1">1+</option>
@@ -137,7 +138,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select>
+                            <select name="select-direction">
                                 <option value="-1" selected>Hướng nhà</option>
                                 @foreach($data['directions'] as $key=>$item)
                                 <option value="{{$item->id}}">{{$item->name}}</option>
@@ -145,18 +146,19 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select>
-                                <option value="audi" selected>Dự án</option>
+                            <select name="select-project">
+                                <option value="-1" selected>Dự án</option>
                             </select>
                         </div>
 
                         <div class="col-md-4 text-left">
-                            <button class="btn-timkiem"><a href="{{URL::asset('tim-kiem-du-an.html')}}">Tìm kiếm</a></button>
+                            <button type="submit" class="btn-timkiem">Tìm kiếm</button>
                         </div>
 
 
                     </div>
                 </div>
+                {!! Form::close() !!}
             </div>
         </div>
 

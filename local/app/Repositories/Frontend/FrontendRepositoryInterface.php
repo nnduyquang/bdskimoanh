@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Frontend;
 
+
 interface FrontendRepositoryInterface
 {
     public function getFrontend();
@@ -21,4 +22,6 @@ interface FrontendRepositoryInterface
     public function getAllTintuc();
 
     public function getAllDuAn();
+
+    public function getSearch($request);
 }

@@ -8,14 +8,11 @@ Route::post('/getAllWardsByDistrict', 'FrontendController@getAllWardsByDistrict'
 
 Route::get('/du-an/{path}', 'FrontendController@getDuAnDetail');
 
-//Route::get('/duan.html', function () {
-//    return view('frontend.products.index');
-//});
 Route::get('/duan.html', 'FrontendController@getAllDuAn');
 
-Route::get('/tim-kiem-du-an.html', function () {
-    return view('frontend.search.index');
-});
+//Route::get('/tim-kiem-du-an.html', function () {
+//    return view('frontend.search.index');
+//});
 
 Route::get('/tin-tuc.html','FrontendController@getAllTintuc');
 
@@ -41,7 +38,7 @@ Route::get('/lien-he.html', function () {
 });
 
 
-Route::post('/tim-kiem','FrontendController@getSearch')->name('search');
+Route::post('/tim-kiem','FrontendController@getSearch')->name('frontend.search');
 
 
 

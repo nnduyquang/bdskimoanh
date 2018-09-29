@@ -49,6 +49,10 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getAllDuAn();
         return view('frontend.products.index', compact('data'));
     }
+    public function getSearch(Request $request){
+        $data = $this->frontendRepository->getSearch($request);
+        return view('frontend.search.index', compact('data'));
+    }
 
 }
 

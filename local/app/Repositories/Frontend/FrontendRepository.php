@@ -8,6 +8,7 @@ use App\Location;
 use App\Menu;
 use App\Post;
 use App\Product;
+use http\Env\Request;
 
 class FrontendRepository implements FrontendRepositoryInterface
 {
@@ -15,9 +16,9 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $data = [];
         $location = new Location();
-        $direction=new Direction();
+        $direction = new Direction();
         $data['cities'] = $location->getAllCities();
-        $data['directions']=$direction->getAllDirection();
+        $data['directions'] = $direction->getAllDirection();
         $product = new Product();
         $products = $product->getAllProductsOrderBy('order');
         foreach ($products as $key => $item) {
@@ -93,9 +94,14 @@ class FrontendRepository implements FrontendRepositoryInterface
         $products = $product->getAllProductsOrderBy('order');
         foreach ($products as $key => $item) {
             $item->stringLocation = $location->getStringLocatationById($item->location_id);
-
         }
         return $products;
+    }
+
+    public function getSearch($request)
+    {
+        $product = new Product();
+        return $product->searchProduct($request);
     }
 
 
