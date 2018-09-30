@@ -48,6 +48,26 @@ class Location extends Model
         return $this->where('parent_id', $id)->get();
     }
 
+    public function getAllChildAndDeeperById($id)
+    {
+        $locations = collect();
+        self::recursiveChildAndDeeper($id,$locations);
+        return $locations;
+    }
+
+    public function recursiveChildAndDeeper($id, &$locations)
+    {
+
+        $location = $this->where('parent_id', $id)->get();
+        foreach ($location as $key => $item) {
+            $locations->push($item);
+            if (!$item->children->isEmpty()) {
+                self::recursiveChildAndDeeper($item->id,$locations);
+            }
+        }
+
+    }
+
     public function prepareParameters($parameters)
     {
         if (!$parameters->has('is_active'))
@@ -89,6 +109,7 @@ class Location extends Model
 
         return substr($stringLocation, 0, strlen($stringLocation) - 1);
     }
+
     public function recursiveLocationName($id,&$stringLocation){
 
         $location=$this->find($id);

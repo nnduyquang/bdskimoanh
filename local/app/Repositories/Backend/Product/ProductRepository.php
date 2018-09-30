@@ -63,7 +63,11 @@ class ProductRepository extends EloquentRepository implements ProductRepositoryI
         $request->request->add(['seo_id' => $seo->id]);
         $parameters = $this->_model->prepareParameters($request);
         $result = $this->_model->create($parameters->all());
-        $result->categoryitems()->attach($parameters['list_category_id']);
+        $attachData = array();
+        foreach ($parameters['list_category_id'] as $key=>$item){
+            $attachData[$item]=array('type'=>CATEGORY_PRODUCT);
+        }
+        $result->categoryitems(CATEGORY_PRODUCT)->attach($attachData);
         return $data;
     }
 
@@ -120,7 +124,18 @@ class ProductRepository extends EloquentRepository implements ProductRepositoryI
         $parameters = $this->_model->prepareParameters($request);
         $result = $this->update($id,$parameters->all());
         $result->seos->update($parameters->all());
-        $result->categoryitems()->sync($parameters['list_category_id']);
+        $syncData = array();
+        foreach ($parameters['list_category_id'] as $key=>$item){
+            $syncData[$item]=array('type'=>CATEGORY_PRODUCT);
+        }
+        $result->categoryitems(CATEGORY_PRODUCT)->sync($syncData);
+        return $data;
+    }
+
+    public function deleteProduct($id)
+    {
+        $data = [];
+        $this->delete($id);
         return $data;
     }
 

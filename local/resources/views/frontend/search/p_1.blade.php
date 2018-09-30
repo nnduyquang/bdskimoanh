@@ -45,7 +45,7 @@
                             @if(is_null($item->area))
                                 <p>Chưa xác định</p>
                             @else
-                                <p>{{$item->area}}</p>
+                                <p>{{$item->area}} m2</p>
                             @endif
                         </div>
                         <div class="d-flex">

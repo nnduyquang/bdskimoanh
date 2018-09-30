@@ -101,7 +101,12 @@ class FrontendRepository implements FrontendRepositoryInterface
     public function getSearch($request)
     {
         $product = new Product();
-        return $product->searchProduct($request);
+        $location = new Location();
+        $products=$product->searchProduct($request);
+        foreach ($products as $key => $item) {
+            $item->stringLocation = $location->getStringLocatationById($item->location_id);
+        }
+        return $products;
     }
 
 

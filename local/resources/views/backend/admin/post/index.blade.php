@@ -66,7 +66,7 @@
                 <td>{{ $data->created_at }}</td>
                 <td>{{ $data->updated_at }}</td>
                 @php
-                    $arrayCategoryItem=$data->categoryitems()->get();
+                    $arrayCategoryItem=$data->categoryitems(CATEGORY_POST)->get();
                 @endphp
                 <td>{{$arrayCategoryItem->implode('name',',')}}</td>
                 <td>

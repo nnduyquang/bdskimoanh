@@ -68,7 +68,8 @@ class PostController extends Controller
     {
         $data=$this->postRepository->showEditPost($id);
         $categoryPost = $data['categoryPost'];
-        return view($data['view'], compact('categoryPost'));
+        $post=$data['post'];
+        return view('backend.admin.post.edit', compact('categoryPost','post'));
     }
 
     /**

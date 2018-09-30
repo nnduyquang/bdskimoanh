@@ -125,9 +125,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
-        $product->seos->delete();
-        $product->delete();
+        $data=$this->productRepository->deleteProduct($id);
         return redirect()->route('product.index')->with('success', 'Đã Xóa Thành Công');
     }
 

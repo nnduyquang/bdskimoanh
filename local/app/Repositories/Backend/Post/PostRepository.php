@@ -46,7 +46,11 @@ class PostRepository extends EloquentRepository implements PostRepositoryInterfa
         $request->request->add(['seo_id' => $seo->id]);
         $parameters = $this->_model->prepareParameters($request);
         $result = $this->_model->create($parameters->all());
-        $result->categoryitems()->attach($parameters['list_category_id']);
+        $attachData = array();
+        foreach ($parameters['list_category_id'] as $key=>$item){
+            $attachData[$item]=array('type'=>CATEGORY_POST);
+        }
+        $result->categoryitems(CATEGORY_POST)->attach($attachData);
         return $data;
 
     }
@@ -57,7 +61,11 @@ class PostRepository extends EloquentRepository implements PostRepositoryInterfa
         $parameters = $this->_model->prepareParameters($request);
         $result = $this->update($id,$parameters->all());
         $result->seos->update($parameters->all());
-        $result->categoryitems()->sync($parameters['list_category_id']);
+        $syncData = array();
+        foreach ($parameters['list_category_id'] as $key=>$item){
+            $syncData[$item]=array('type'=>CATEGORY_POST);
+        }
+        $result->categoryitems(CATEGORY_POST)->sync($syncData);
         return $data;
     }
 

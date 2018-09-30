@@ -1,7 +1,7 @@
 @php
-    $arrayCategoryItem=$product->categoryitems(CATEGORY_PRODUCT)->get();
+    $arrayCategoryItem=$post->categoryitems(CATEGORY_POST)->get();
 @endphp
-@foreach($categoryProduct as $key=>$item)
+@foreach($categoryPost as $key=>$item)
     <label class="check-container">
         {{$item->name}}
         @if(in_array($item->id,explode(',',$arrayCategoryItem->implode('id',','))))
@@ -13,6 +13,6 @@
         @endif
     </label>
     @if(!$item->children->isEmpty())
-        @include('backend.admin.product.list-select-option-edit', ['categoryProduct' => $item->children])
+        @include('backend.admin.post.list-select-option-edit', ['categoryPost' => $item->children])
     @endif
 @endforeach

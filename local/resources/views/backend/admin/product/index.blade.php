@@ -110,7 +110,7 @@
 
                     </td>
                     @php
-                        $arrayCategoryItem=$data->categoryitems()->get();
+                        $arrayCategoryItem=$data->categoryitems(CATEGORY_PRODUCT)->get();
                     @endphp
                     <td>{{$arrayCategoryItem->implode('name',',')}}</td>
                     <td>{{ $data->users->name }}</td>

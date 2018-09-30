@@ -18,9 +18,9 @@ class Product extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
-    public function categoryitems()
+    public function categoryitems($type)
     {
-        return $this->belongsToMany('App\CategoryItem', 'category_many', 'item_id', 'category_id')->withTimestamps();
+        return $this->belongsToMany('App\CategoryItem', 'category_many', 'item_id', 'category_id')->withPivot('type')->wherePivot('type', $type)->withTimestamps();
     }
 
     public function seos()
@@ -47,6 +47,9 @@ class Product extends Model
         }
         if (!$parameters->input('list_category_id')) {
             $parameters->request->add(['list_category_id' => [1]]);
+        }
+        if (!$parameters->input('is_active')) {
+            $parameters->request->add(['is_active' => null]);
         }
         if ($city != '-1') {
             if ($district == '-1') {
@@ -150,16 +153,58 @@ class Product extends Model
                 if ($wardID != '-1') {
                     $products->where('location_id', $wardID);
                 } else{
-                    $locationChildID = $location->getAllChildById($districtID);
-                    dd();
-//                    $finalId=implode(',',$locationChildID->pluck('id')->toArray());
-                    $products->whereIn('location_id', $locationChildID->pluck('id')->toArray());
+                    $locationChildID = $location->getAllChildAndDeeperById($districtID);
+                    $finalId = $locationChildID->pluck('id');
+                    $finalId->push((int)$districtID);
+                    $products->whereIn('location_id', $finalId);
                 }
             }else{
-                $products->where('location_id', $cityID);
+                $locationChildID = $location->getAllChildAndDeeperById($cityID);
+                $finalId = $locationChildID->pluck('id');
+                $finalId->push((int)$cityID);
+                $products->whereIn('location_id', $finalId);
             }
         }
+        if ($area != '-1') {
+            switch ($area) {
+                case "0":
+                    $products->whereNull('area');
+                    break;
+                case "500":
+                    $products->where('area', '>=', 500);
+                    break;
+                default:
+                    $num = explode("-", $area);
+                    $products->where('area', '>', $num[0])->where('area', '<=', $num[1]);
+                    break;
+            }
+        }
+        if ($price != '-1') {
+            switch ($price) {
+                case "0":
+                    $products->whereNull('price');
+                    break;
+                case "500":
+                    $products->where('price', '>=', 500);
+                    break;
+                default:
+                    $num = explode("-", $price);
+                    $products->where('price', '>', $num[0])->where('area', '<=', $num[1]);
+                    break;
+            }
+        }
+
         return $products->get();
+
+    }
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($product) { // before delete() method call this
+            $product->seos->delete();
+            $product->categoryitems(CATEGORY_PRODUCT)->detach();
+        });
 
     }
 

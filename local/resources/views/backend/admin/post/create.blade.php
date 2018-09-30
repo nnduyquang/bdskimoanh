@@ -47,7 +47,6 @@
                 <div class="wrap-create-edit">
                     <strong class="text-title-left">Mô Tả Ngắn:</strong>
                     <div class="form-group">
-
                         {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-post','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                     </div>
                 </div>
