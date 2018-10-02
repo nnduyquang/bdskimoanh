@@ -1,7 +1,7 @@
 <style>
     .bg-slider {
         width: 100%;
-        background-image: url({{URL::asset('images/slider/01-38.jpg')}});
+        background-image: url({{URL::asset('images/slider/silde-phuoc-tan.jpg')}});
         background-position: center center;
         -webkit-background-size: cover;
         background-size: cover;
