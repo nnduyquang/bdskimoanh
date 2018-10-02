@@ -53,6 +53,10 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getSearch($request);
         return view('frontend.search.index', compact('data'));
     }
+    public function getPageGioiThieu(){
+        $data = $this->frontendRepository->getPageGioiThieu();
+        return view('frontend.page.index', compact('data'));
+    }
 
 }
 

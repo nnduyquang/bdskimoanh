@@ -24,4 +24,6 @@ interface FrontendRepositoryInterface
     public function getAllDuAn();
 
     public function getSearch($request);
+
+    public function getPageGioiThieu();
 }

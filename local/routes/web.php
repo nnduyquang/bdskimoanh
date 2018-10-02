@@ -30,9 +30,10 @@ Route::get('/trang-tin.html', function () {
     return view('frontend.page.index');
 });
 
-Route::get('/gioi-thieu.html', function () {
-    return view('frontend.page.index');
-});
+//Route::get('/gioi-thieu.html', function () {
+//    return view('frontend.page.index');
+//});
+Route::get('/gioi-thieu.html', 'FrontendController@getPageGioiThieu');
 Route::get('/lien-he.html', function () {
     return view('frontend.contact.index');
 });

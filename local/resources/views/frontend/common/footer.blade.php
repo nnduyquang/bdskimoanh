@@ -109,15 +109,17 @@
         <div class="row">
             <div class="col-md-12">
                 <h5>LIÊN KẾT NỔI BẬT</h5>
-                <a href="">Bán căn hộ chung cư Quận 1,</a><a href="">Bán căn hộ chung cư Quận 2,</a><a href="">Bán căn hộ chung cư Quận 3,</a>
-                <a href="">Bán căn hộ chung cư Quận 4,</a><a href="">Bán căn hộ chung cư Quận 5,</a><a href="">Bán căn hộ chung cư Quận 6,</a>
-                <a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 9,</a>
-                <a href="">Bán căn hộ chung cư Quận 10,</a><a href="">Bán căn hộ chung cư Quận 11,</a><a href="">Bán căn hộ chung cư Quận 11,</a>
-                <a href="">Bán căn hộ chung cư Huyện Nhà Bè,</a><a href="">Bán căn hộ chung cư Bình Dương,</a><a href="">Bán căn hộ chung cư Củ Chi,</a>
-                <a href="">Bán căn hộ chung cư Quận Tân Phú,</a><a href="">Bán căn hộ chung cư Quận Bình Thạnh,</a><a href="">Bán căn hộ chung cư Đường D3,</a>
-                <a href="">Bán căn hộ chung cư Đường D4,</a><a href="">Bán căn hộ chung cư Đường D1,</a><a href="">Bán căn hộ chung cư Đường D2,</a>
-                <a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 9,</a>
-                <a href="">Bán căn hộ chung cư Quận 10,</a><a href="">Bán căn hộ chung cư Quận 11,</a><a href="">Bán căn hộ chung cư Quận 11,</a>
+                @foreach($listFrontEndInfo['products'] as $key=>$item)
+                <a href="{{URL::to('du-an/'.$item->path)}}">{{$item->name}},</a>
+                @endforeach
+                {{--<a href="">Bán căn hộ chung cư Quận 4,</a><a href="">Bán căn hộ chung cư Quận 5,</a><a href="">Bán căn hộ chung cư Quận 6,</a>--}}
+                {{--<a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 9,</a>--}}
+                {{--<a href="">Bán căn hộ chung cư Quận 10,</a><a href="">Bán căn hộ chung cư Quận 11,</a><a href="">Bán căn hộ chung cư Quận 11,</a>--}}
+                {{--<a href="">Bán căn hộ chung cư Huyện Nhà Bè,</a><a href="">Bán căn hộ chung cư Bình Dương,</a><a href="">Bán căn hộ chung cư Củ Chi,</a>--}}
+                {{--<a href="">Bán căn hộ chung cư Quận Tân Phú,</a><a href="">Bán căn hộ chung cư Quận Bình Thạnh,</a><a href="">Bán căn hộ chung cư Đường D3,</a>--}}
+                {{--<a href="">Bán căn hộ chung cư Đường D4,</a><a href="">Bán căn hộ chung cư Đường D1,</a><a href="">Bán căn hộ chung cư Đường D2,</a>--}}
+                {{--<a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 7,</a><a href="">Bán căn hộ chung cư Quận 9,</a>--}}
+                {{--<a href="">Bán căn hộ chung cư Quận 10,</a><a href="">Bán căn hộ chung cư Quận 11,</a><a href="">Bán căn hộ chung cư Quận 11,</a>--}}
             </div>
         </div>
     </div>

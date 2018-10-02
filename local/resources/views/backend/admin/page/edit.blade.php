@@ -7,10 +7,10 @@
 @section('scripts')
 @stop
 @section('container')
-    <div class="col-lg-12">
+    <div class="col-lg-12 title-header">
         <div class="row">
             <div class="col-md-8">
-                {{--<h2>Cập Nhật Trang</h2>--}}
+                <h2>Cập Nhật Trang</h2>
             </div>
             <div class="col-md-4 text-right">
                 <a class="btn btn-primary" href="{{ route('page.index') }}"> Back</a>
@@ -31,28 +31,46 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6">
-                <strong>Tên Trang:</strong>
-                {!! Form::text('title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
-                <div class="form-group">
-                    <strong>Mô Tả Ngắn:</strong>
-                    {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-page','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                <div class="wrap-create-edit">
+                    <strong class="text-title-left">Tên Trang</strong>
+                    <div class="form-group">
+                        {!! Form::text('title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                    </div>
+                </div>
+                <div class="wrap-create-edit">
+                    <strong class="text-title-left">Mô Tả Ngắn</strong>
+                    <div class="form-group">
+                        {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-page','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group">
-                    <strong>Hình Đại Diện: </strong>
-                    {!! Form::text('image', url('/').'/'.$page->image, array('class' => 'form-control','id'=>'pathImagePage')) !!}
-                    <br>
-                    {!! Form::button('Tìm', array('id' => 'btnBrowseImagePage','class'=>'btn btn-primary')) !!}
-                </div>
-                <div class="form-group">
-                    {{ Html::image($page->image,'',array('id'=>'showHinhPage','class'=>'show-image'))}}
+                <div class="wrap-create-edit">
+                    <strong class="text-title-right">Hình Đại Diện</strong>
+                    <div class="form-group">
+                        @if($page->image!='')
+                            {!! Form::text('image', url('/').'/'.$page->image, array('class' => 'form-control','id'=>'pathImagePost')) !!}
+                        @else
+                            {!! Form::text('image', '', array('class' => 'form-control','id'=>'pathImagePost')) !!}
+                        @endif
+                        <br>
+                        {!! Form::button('Tìm', array('id' => 'btnBrowseImagePost','class'=>'btn btn-primary')) !!}
+                    </div>
+                    <div class="form-group">
+                        @if($page->image!='')
+                            {{ Html::image($page->image,'',array('id'=>'showHinhPost','class'=>'show-image'))}}
+                        @else
+                            {{ Html::image('','',array('id'=>'showHinhPost','class'=>'show-image'))}}
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-12 p-0">
-            <strong>Nội Dung Trang:</strong>
+            <div class="wrap-create-edit">
+            <strong class="text-title-left">Nội Dung Trang</strong>
             {!! Form::textarea('content',null,array('placeholder' => '','id'=>'content-page','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+            </div>
 
         </div>
         <hr>
@@ -82,10 +100,32 @@
                     {!! Form::textarea('seo_description',$page->seos->seo_description,array('placeholder' => '','id'=>'seo-description-post','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
             </div>
+            <h3>Mạng Xã Hội</h3>
+            <div class="content">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <strong>Chọn hình đại diện hiển thị MXH: </strong>
+                        @if($page->seos->seo_image!='')
+                            {!! Form::text('seo-image', url('/').'/'.$page->seos->seo_image, array('class' => 'form-control','id'=>'pathImageMXH')) !!}
+                        @else
+                            {!! Form::text('seo-image', '', array('class' => 'form-control','id'=>'pathImageMXH')) !!}
+                        @endif
+                        <br>
+                        {!! Form::button('Tìm', array('id' => 'btnBrowseImageMXH','class'=>'btn btn-primary')) !!}
+                    </div>
+                    <div class="form-group">
+                        @if($page->seos->seo_image!='')
+                            {{ Html::image($page->seos->seo_image,'',array('id'=>'showHinhMXH','class'=>'show-image'))}}
+                        @else
+                            {{ Html::image('','',array('id'=>'showHinhMXH','class'=>'show-image'))}}
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <strong>Kích Hoạt:</strong>
-            <input {{$page->isActive==1?'checked':''}}  name="page_is_active" data-on="Có"
+            <input {{$page->isActive==1?'checked':''}}  name="isActive" data-on="Có"
                    data-off="Không"
                    type="checkbox" data-toggle="toggle">
         </div>

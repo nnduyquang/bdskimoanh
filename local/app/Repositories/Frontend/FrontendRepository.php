@@ -35,6 +35,9 @@ class FrontendRepository implements FrontendRepositoryInterface
         $post = new Post();
         $posts = $post->getAllPostSidebar();
         $data['posts'] = $posts;
+        $product = new Product();
+        $products = $product->getAllProductsOrderBy('order');
+        $data['products'] = $products;
         return $data;
     }
 
@@ -107,6 +110,12 @@ class FrontendRepository implements FrontendRepositoryInterface
             $item->stringLocation = $location->getStringLocatationById($item->location_id);
         }
         return $products;
+    }
+
+    public function getPageGioiThieu()
+    {
+        $post = new Post();
+        return $post->findPostByPath('gioi-thieu');
     }
 
 
