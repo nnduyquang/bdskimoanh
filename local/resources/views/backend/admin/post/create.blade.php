@@ -33,7 +33,7 @@
             <div class="col-md-6">
                 <div class="wrap-create-edit">
                     {!! Form::hidden('post_type', 1) !!}
-                    <strong class="text-title-left">Tên Bài Viết:</strong>
+                    <strong class="text-title-left">Tên Bài Viết</strong>
                     <div class="form-group">
                         {!! Form::text('title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                     </div>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="wrap-create-edit">
-                    <strong class="text-title-left">Mô Tả Ngắn:</strong>
+                    <strong class="text-title-left">Mô Tả Ngắn</strong>
                     <div class="form-group">
                         {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-post','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                     </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-md-6">
                 <div class="wrap-create-edit">
-                    <strong class="text-title-right">Hình Đại Diện: </strong>
+                    <strong class="text-title-right">Hình Đại Diện</strong>
                     <div class="form-group">
                         {!! Form::text('image', null, array('class' => 'form-control','id'=>'pathImagePost')) !!}
                         <br>
