@@ -6,8 +6,8 @@
 
     <div class="row drop-sort">
         <div class="col-md-12 mt-3">
-            <p class="mb-1">Tìm kiếm theo các tiêu chí: Loại BDS: <span>Bán căn hộ chung cư</span>. Tỉnh/Tp: <span>Tp.HCM</span>.
-                Quận/Huyện: <span>Quận 1</span>. Có 890 bất động sản.</p>
+            {{--<p class="mb-1">Tìm kiếm theo các tiêu chí: Loại BDS: <span>Bán căn hộ chung cư</span>. Tỉnh/Tp: <span>Tp.HCM</span>.--}}
+                {{--Quận/Huyện: <span>Quận 1</span>. Có 890 bất động sản.</p>--}}
         </div>
     </div>
 

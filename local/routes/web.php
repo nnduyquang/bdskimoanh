@@ -15,6 +15,7 @@ Route::get('/tin-tuc.html','FrontendController@getAllTintuc');
 
 Route::get('/tuyen-dung.html', 'FrontendController@getAllTuyenDung');
 Route::get('/tuyen-dung/{path}', 'FrontendController@getDetailTuyenDung');
+Route::post('/sendmail/send', ['as' => 'mail.sendmail', 'uses' => 'MailController@sendMail']);
 
 Route::get('/tuyen-dung-chi-tiet.html', function () {
     return view('frontend.tuyendung-details.index');

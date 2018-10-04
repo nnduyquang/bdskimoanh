@@ -187,6 +187,7 @@ return [
         App\Providers\ProductServiceProvider::class,
         App\Providers\CategoryItemServiceProvider::class,
         App\Providers\PageServiceProvider::class,
+        App\Providers\ConfigServiceProvider::class,
     ],
 
     /*
