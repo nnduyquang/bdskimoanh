@@ -118,6 +118,13 @@ class Location extends Model
             self::recursiveLocationName($location->parent_id,$stringLocation);
         }
     }
+    public function getLocationByPath($path){
+        return $this->wherePath($path)->first();
+    }
+
+    public function getListLocationByArrayId($array){
+        return $this->whereIn('id', $array)->get();
+    }
 
     public function setPathAttribute($value)
     {

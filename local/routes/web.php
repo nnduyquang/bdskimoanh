@@ -10,15 +10,11 @@ Route::get('/du-an/{path}', 'FrontendController@getDuAnDetail');
 
 Route::get('/duan.html', 'FrontendController@getAllDuAn');
 
-//Route::get('/tim-kiem-du-an.html', function () {
-//    return view('frontend.search.index');
-//});
 
 Route::get('/tin-tuc.html','FrontendController@getAllTintuc');
 
-Route::get('/tuyen-dung.html', function () {
-    return view('frontend.tuyendung.index');
-});
+Route::get('/tuyen-dung.html', 'FrontendController@getAllTuyenDung');
+Route::get('/tuyen-dung/{path}', 'FrontendController@getDetailTuyenDung');
 
 Route::get('/tuyen-dung-chi-tiet.html', function () {
     return view('frontend.tuyendung-details.index');
@@ -26,13 +22,12 @@ Route::get('/tuyen-dung-chi-tiet.html', function () {
 
 Route::get('/tin-tuc/{path}', 'FrontendController@getDetailTinTuc');
 
+Route::get('/dia-diem/{path}', 'FrontendController@getDuAnTheoDiaDiem');
+
 Route::get('/trang-tin.html', function () {
     return view('frontend.page.index');
 });
 
-//Route::get('/gioi-thieu.html', function () {
-//    return view('frontend.page.index');
-//});
 Route::get('/gioi-thieu.html', 'FrontendController@getPageGioiThieu');
 Route::get('/lien-he.html', function () {
     return view('frontend.contact.index');

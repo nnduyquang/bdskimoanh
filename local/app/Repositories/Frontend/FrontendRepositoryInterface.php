@@ -23,7 +23,13 @@ interface FrontendRepositoryInterface
 
     public function getAllDuAn();
 
+    public function getDuAnTheoDiaDiem($path);
+
     public function getSearch($request);
 
     public function getPageGioiThieu();
+
+    public function getAllTuyenDung();
+
+    public function getDetailTuyenDung($path);
 }

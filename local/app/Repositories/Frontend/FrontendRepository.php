@@ -38,6 +38,11 @@ class FrontendRepository implements FrontendRepositoryInterface
         $product = new Product();
         $products = $product->getAllProductsOrderBy('order');
         $data['products'] = $products;
+        $location = new Location();
+        $direction = new Direction();
+        $data['cities'] = $location->getAllCities();
+        $data['directions'] = $direction->getAllDirection();
+        $data['area']=$location->getListLocationByArrayId([17,2,4,24,23,8]);
         return $data;
     }
 
@@ -74,8 +79,15 @@ class FrontendRepository implements FrontendRepositoryInterface
 
     public function getDuAnDetail($path)
     {
+        $data = [];
         $product = new Product();
-        return $product->findProductByPath($path);
+        $location = new Location();
+        $data['product']=$product->findProductByPath($path);
+        $data['other']=$product->findProductOther($data['product']->id);
+        foreach ($data['other'] as $key => $item) {
+            $item->stringLocation = $location->getStringLocatationById($item->location_id);
+        }
+        return $data;
     }
 
     public function getDetailTinTuc($path)
@@ -87,7 +99,7 @@ class FrontendRepository implements FrontendRepositoryInterface
     public function getAllTintuc()
     {
         $post = new Post();
-        return $post->getAllPost();
+        return $post->getAllPostByCategory(3);
     }
 
     public function getAllDuAn()
@@ -116,6 +128,36 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $post = new Post();
         return $post->findPostByPath('gioi-thieu');
+    }
+
+    public function getDuAnTheoDiaDiem($path)
+    {
+        $product = new Product();
+        $location = new Location();
+        $diadiem=$location->getLocationByPath($path);
+        $locationChildID = $location->getAllChildAndDeeperById($diadiem->id);
+        $finalId = $locationChildID->pluck('id');
+        $finalId->push((int)$diadiem->id);
+        $products =  $product->whereIn('location_id', $finalId)->get();
+        foreach ($products as $key => $item) {
+            $item->stringLocation = $location->getStringLocatationById($item->location_id);
+        }
+        return $products;
+    }
+
+    public function getAllTuyenDung()
+    {
+        $post = new Post();
+        return $post->getAllPostByCategory(4);
+    }
+
+    public function getDetailTuyenDung($path)
+    {
+        $data=[];
+        $post = new Post();
+        $data['post']=$post->findPostByPath($path);
+        $data['other']=$post->findPostOther($data['post']->id);
+        return $data;
     }
 
 

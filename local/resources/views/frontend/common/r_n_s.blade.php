@@ -48,17 +48,17 @@
         background-color: #fdfcff;
     }
 
-    #r_n_s .right-nav-content ul, #r_n_s  .right-nav-quan ul {
+    #r_n_s .right-nav-content ul, #r_n_s .right-nav-quan ul {
         list-style-type: none;
     }
 
-    #r_n_s  .right-nav-content ul li {
+    #r_n_s .right-nav-content ul li {
         position: relative;
         margin-bottom: 8px;
         padding-left: 20px;
     }
 
-    #r_n_s  .right-nav-content ul li a {
+    #r_n_s .right-nav-content ul li a {
         color: #1f648b;
         transition: .3s;
     }
@@ -114,53 +114,69 @@
                 </h6>
 
                 <div class="right-nav-quan p-2 text-center">
-
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option selected>Gò Vấp</option>
+                    {!! Form::open(array('route' => 'frontend.search','method'=>'POST','name'=>'search-home')) !!}
+                    <select class="form-control" name="select-city">
+                        <option value="-1">Chọn Tỉnh/Thành Phố</option>
+                        @foreach($listFrontEndInfo['cities'] as $key=>$item)
+                            <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
                     </select>
 
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option selected>14</option>
+                    <select class="form-control" name="select-district">
+                        <option value="-1" selected>Chọn Quận/Huyện</option>
                     </select>
 
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option selected>Số 57</option>
+                    <select class="form-control" name="select-ward">
+                        <option value="-1" selected>Chọn Phường/Xã</option>
                     </select>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option selected>1 - 2 tỷ</option>
-                    </select>
-
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option selected>Diện tích</option>
+                    <select class="form-control" name="select-area">
+                        <option value="-1" selected>Diện tích</option>
+                        <option value="0">Không Xác Định</option>
+                        <option value="0-30"><= 30 m2</option>
+                        <option value="30-50">30 - 50 m2</option>
+                        <option value="50-80">50 - 80 m2</option>
+                        <option value="80-100">80 - 100 m2</option>
+                        <option value="100-150">100 - 150 m2</option>
+                        <option value="150-200">150 - 200 m2</option>
+                        <option value="200-250">200 - 250 m2</option>
+                        <option value="250-300">250 - 300 m2</option>
+                        <option value="300-500">300 - 500 m2</option>
+                        <option value="500">>= 500 m2</option>
                     </select>
 
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option selected>2+</option>
+                    <select class="form-control" name="select-price">
+                        <option value="-1" selected>Mức giá</option>
+                        <option value="0">Thỏa Thuận</option>
+                        <option value="0-500">< 500 triệu</option>
+                        <option value="500-800">500 - 800 triệu</option>
+                        <option value="800-1000">800 - 1 tỷ</option>
+                        <option value="1000-2000">1 - 2 tỷ</option>
+                        <option value="2000-3000">2 - 3 tỷ</option>
+                        <option value="3000-5000">3 - 5 tỷ</option>
+                        <option value="5000-7000">5 - 7 tỷ</option>
+                        <option value="7000-10000">7 - 10 tỷ</option>
+                        <option value="10000-20000">10 - 20 tỷ</option>
+                        <option value="20000-30000">20 - 30 tỷ</option>
+                        <option value="30000">> 30 tỷ</option>
+
                     </select>
 
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option selected>KXĐ</option>
+                    <select class="form-control" name="select-num-bed">
+                        <option value="-1" selected>Số phòng ngủ</option>
+                        <option value="0">Không Xác Định</option>
+                        <option value="1">1+</option>
+                        <option value="2">2+</option>
+                        <option value="3">3+</option>
+                        <option value="4">4+</option>
+                        <option value="5">5+</option>
+                    </select>
+
+
+                    <select class="form-control" name="select-direction">
+                        <option value="-1" selected>Hướng nhà</option>
+                        @foreach($listFrontEndInfo['directions'] as $key=>$item)
+                            <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
                     </select>
 
                     <select class="form-control" id="sel1">
@@ -170,7 +186,8 @@
                         <option selected>Dream Home</option>
                     </select>
 
-                    <button class="mt-2">TÌM KIẾM</button>
+                    <button type="submit" class="btn-timkiem mt-2">Tìm kiếm</button>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

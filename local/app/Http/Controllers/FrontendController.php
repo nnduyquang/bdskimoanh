@@ -35,7 +35,9 @@ class FrontendController extends Controller
     }
     public function getDuAnDetail($path){
         $data = $this->frontendRepository->getDuAnDetail($path);
-        return view('frontend.product-details.index', compact('data'));
+        $product=$data['product'];
+        $other=$data['other'];
+        return view('frontend.product-details.index', compact('product','other'));
     }
     public function getDetailTinTuc($path){
         $data = $this->frontendRepository->getDetailTinTuc($path);
@@ -45,8 +47,16 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getAllTintuc();
         return view('frontend.news.index', compact('data'));
     }
+    public function getAllTuyenDung(){
+        $data = $this->frontendRepository->getAllTuyenDung();
+        return view('frontend.tuyendung.index', compact('data'));
+    }
     public function getAllDuAn(){
         $data = $this->frontendRepository->getAllDuAn();
+        return view('frontend.products.index', compact('data'));
+    }
+    public function getDuAnTheoDiaDiem($path){
+        $data = $this->frontendRepository->getDuAnTheoDiaDiem($path);
         return view('frontend.products.index', compact('data'));
     }
     public function getSearch(Request $request){
@@ -56,6 +66,12 @@ class FrontendController extends Controller
     public function getPageGioiThieu(){
         $data = $this->frontendRepository->getPageGioiThieu();
         return view('frontend.page.index', compact('data'));
+    }
+    public function getDetailTuyenDung($path){
+        $data = $this->frontendRepository->getDetailTuyenDung($path);
+        $post=$data['post'];
+        $other=$data['other'];
+        return view('frontend.tuyendung-details.index', compact('post','other'));
     }
 
 }
