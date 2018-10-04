@@ -131,6 +131,11 @@ class Product extends Model
     {
         return $this->wherePath($path)->first();
     }
+
+    public function findProductOther($id)
+    {
+        return $this->where('id','!=',$id)->get();
+    }
 //    public function findProductByLocationID($id)
 //    {
 //        return $this->whereLocationId($id)->get();
@@ -147,18 +152,18 @@ class Product extends Model
         $directionID = $request->input('select-direction');
         $productID = $request->input('select-project');
         $products = $this->query();
-        $location=new Location();
+        $location = new Location();
         if ($cityID != '-1') {
             if ($districtID != '-1') {
                 if ($wardID != '-1') {
                     $products->where('location_id', $wardID);
-                } else{
+                } else {
                     $locationChildID = $location->getAllChildAndDeeperById($districtID);
                     $finalId = $locationChildID->pluck('id');
                     $finalId->push((int)$districtID);
                     $products->whereIn('location_id', $finalId);
                 }
-            }else{
+            } else {
                 $locationChildID = $location->getAllChildAndDeeperById($cityID);
                 $finalId = $locationChildID->pluck('id');
                 $finalId->push((int)$cityID);
@@ -197,6 +202,7 @@ class Product extends Model
         return $products->get();
 
     }
+
     protected static function boot()
     {
         parent::boot();

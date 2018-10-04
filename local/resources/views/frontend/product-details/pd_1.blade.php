@@ -5,7 +5,7 @@
 
 <div id="pd_1">
 
-    <h1>{{$data->name}}</h1>
+    <h1>{{$product->name}}</h1>
 
     <h2 class="khu-vuc mb-2">Khu vực: <a href="">Bán căn hộ chung cư tại Dream Home</a> - Quận Gò Vấp -
         Tp.HCM</h2>
@@ -13,25 +13,25 @@
     <ul>
         <li class="d-flex">
             <div class="span1">Mức giá</div>
-            @if(is_null($data->price))
+            @if(is_null($product->price))
                 <div class="span2">Không Xác Định</div>
             @else
-                <div class="span2">{{$data->price}} {{$data->units->name}}</div>
+                <div class="span2">{{$product->price}} {{$product->units->name}}</div>
             @endif
         </li>
         <li class="d-flex">
             <div class="span1">Diện tích</div>
-            @if(is_null($data->area))
+            @if(is_null($product->area))
                 <div class="span2">Không xác định</div>
             @else
-                <div class="span2">{{$data->area}} m2</div>
+                <div class="span2">{{$product->area}} m2</div>
             @endif
         </li>
     </ul>
 
     <h5>Thông tin chi tiết</h5>
 
-    {!! $data->content !!}
+    {!! $product->content !!}
     <br>
 
     <div class="row">

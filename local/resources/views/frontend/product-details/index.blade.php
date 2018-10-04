@@ -27,7 +27,7 @@
                 <div class="col-md-8 p-lg-1 p-0" id="">
                     @include('frontend.product-details.pd_1')
                     @include('frontend.product-details.pd_2')
-                    @include('frontend.product-details.pd_3')
+                    {{--@include('frontend.product-details.pd_3')--}}
                     @include('frontend.product-details.pd_4')
                 </div>
 
