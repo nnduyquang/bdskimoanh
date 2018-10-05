@@ -16,6 +16,8 @@ class ProductRepository extends EloquentRepository implements ProductRepositoryI
         return \App\Product::class;
     }
 
+
+
     public function showCreateProduct()
     {
         $data = [];

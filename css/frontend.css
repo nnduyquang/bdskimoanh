@@ -445,6 +445,7 @@ This class is added to the container
   padding: 18px 14px;
   -webkit-transition: .3s;
   transition: .3s;
+  text-transform: uppercase;
 }
 
 #menu ul li a.active {

@@ -10,6 +10,10 @@ Route::get('/du-an/{path}', 'FrontendController@getDuAnDetail');
 
 Route::get('/duan.html', 'FrontendController@getAllDuAn');
 
+Route::get('/videos.html', function () {
+    return view('frontend.videos.index');
+});
+
 
 Route::get('/tin-tuc.html','FrontendController@getAllTintuc');
 
