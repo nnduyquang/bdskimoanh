@@ -49,7 +49,7 @@
         font-size: 14px;
     }
 
-    #search_box .btn-timkiem a{
+    #search_box .btn-timkiem a {
         color: white;
     }
 
@@ -141,13 +141,16 @@
                             <select name="select-direction">
                                 <option value="-1" selected>Hướng nhà</option>
                                 @foreach($data['directions'] as $key=>$item)
-                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-4">
                             <select name="select-project">
                                 <option value="-1" selected>Dự án</option>
+                                @foreach($data['products'] as $key=>$item)
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
                             </select>
                         </div>
 

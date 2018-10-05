@@ -198,7 +198,22 @@ class Product extends Model
                     break;
             }
         }
-
+        if($productID!=-1){
+            $products->where('id', $productID);
+        }
+        if($numBed!=-1){
+            switch($numBed){
+                case"0":
+                    $products->whereNull('num_bed');
+                    break;
+                default:
+                    $products->where('num_bed', $numBed);
+                    break;
+            }
+        }
+        if($directionID!=-1){
+            $products->where('direction_id', $directionID);
+        }
         return $products->get();
 
     }
