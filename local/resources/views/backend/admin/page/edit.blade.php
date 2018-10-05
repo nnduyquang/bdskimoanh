@@ -66,6 +66,36 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12 p-0 import-video">
+            <div class="wrap-create-edit">
+                <strong class="text-title-left">Thêm Video Clip</strong>
+                <div class="group-input">
+                    @php
+                        $listVideo=explode(';',$page->videos);
+                        $i=0;
+                    @endphp
+                    @foreach($listVideo as $key=>$item)
+                        <div class="form-group row">
+                            <div class="col-md-11">
+                                {!! Form::text('video-choose[]',$item, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                            </div>
+                            @if($i>=1)
+                                <div class="col-md-1 delete-input">
+                                    <span>x</span>
+                                </div>
+                            @endif
+                            @php
+                                $i++;
+                            @endphp
+                        </div>
+                    @endforeach
+
+                </div>
+                <div class="form-group">
+                    {!! Form::button('Thêm', array('id' => 'btnVideoMore','class'=>'btn btn-primary')) !!}
+                </div>
+            </div>
+        </div>
         <div class="col-md-12 p-0">
             <div class="wrap-create-edit">
             <strong class="text-title-left">Nội Dung Trang</strong>

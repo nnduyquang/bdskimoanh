@@ -6,3 +6,16 @@
     padding: 15px;
   }
 }
+.delete-input{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  span{
+    background-color: red;
+    color: white;
+    display: block;
+    padding: 5px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}

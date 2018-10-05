@@ -22,8 +22,8 @@
                             <i class="fas fa-map-marked-alt"></i>
                             <div class="pl-3">
                                 <span>Thông tin công ty!</span>
-                                <p>Công ty CP DVTM và xây dựng địa ốc Kim Oanh</p>
-                                <p>Lô B-13, QL13, Golden A, TX Bến Cát, tỉnh Bình Dương</p>
+                                <p>{{$listFrontEndInfo['namecompany']}}</p>
+                                <p>{!! $listFrontEndInfo['contact'] !!}</p>
                             </div>
                         </div>
 
@@ -31,8 +31,8 @@
                             <i class="fas fa-mobile-alt"></i>
                             <div class="pl-3">
                                 <span>Gọi ngay chúng tôi!</span>
-                                <p style="font-size: 20px;font-weight: bold">0917 503 788</p>
-                                <p style="font-size: 20px;font-weight: bold">098 2324 578</p>
+                                <p style="font-size: 20px;font-weight: bold">{{$listFrontEndInfo['phone1']}}</p>
+                                <p style="font-size: 20px;font-weight: bold">{{$listFrontEndInfo['phone2']}}</p>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                                    href="{{URL::to($item->url)}}">{{$item->title}}</a></li>
                         @endforeach
                     </ul>
-                    <div><p style="font-size: 18px;font-weight: bold">HOTLINE : 0917 503 788</p></div>
+                    <div><p style="font-size: 18px;font-weight: bold">HOTLINE : {{$listFrontEndInfo['hotline']}}</p></div>
                 </div>
             </div>
         </div>

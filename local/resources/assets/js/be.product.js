@@ -78,4 +78,7 @@ $('select[name=select-district]').change(function () {
         }
     });
 });
+$('textarea[name=map]').change(function(){
+    $('.show-map').html($(this).val());
+});
 

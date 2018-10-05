@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class Product extends Model
 {
     protected $fillable = [
-        'name', 'path', 'description', 'content', 'code', 'image', 'sub_image', 'is_active', 'is_hot', 'price', 'area', 'user_id', 'seo_id', 'location_id', 'direction_id', 'unit_id'
+        'name', 'path', 'description', 'content','num_bed','map' ,'code', 'image', 'sub_image', 'is_active', 'is_hot', 'price', 'area', 'user_id', 'seo_id', 'location_id', 'direction_id', 'unit_id'
     ];
 
 //    protected $hidden = ['id'];

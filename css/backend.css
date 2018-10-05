@@ -386,6 +386,26 @@ img {
   padding: 15px;
 }
 
+.delete-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.delete-input span {
+  background-color: red;
+  color: white;
+  display: block;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
 /********** NESTABLE CSS **********/
 .dd {
   position: relative;

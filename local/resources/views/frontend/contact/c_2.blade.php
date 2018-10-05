@@ -8,18 +8,18 @@
 
                 <div class="">
                     <h4>TÊN DOANH NGHIỆP</h4>
-                    <p>Công ty CP DVTM và xây dựng địa ốc KIM OANH</p>
+                    <p>{{$listFrontEndInfo['namecompany']}}</p>
                 </div>
 
                 <div class="">
                     <h4>ĐỊA CHỈ</h4>
-                    <p>Lô B-13, QL13, Golden A, TX Bến Cát, tỉnh Bình Dương</p>
+                    <p>{!! $listFrontEndInfo['contact'] !!}</p>
                 </div>
 
                 <div class="">
                     <h4>HOTLINE</h4>
-                    <p>0917 503 788</p>
-                    <p>098 2324 578</p>
+                    <p>{{$listFrontEndInfo['phone1']}}</p>
+                    <p>{{$listFrontEndInfo['phone2']}}</p>
                 </div>
 
 

@@ -17,9 +17,9 @@ Route::get('/tuyen-dung.html', 'FrontendController@getAllTuyenDung');
 Route::get('/tuyen-dung/{path}', 'FrontendController@getDetailTuyenDung');
 Route::post('/sendmail/send', ['as' => 'mail.sendmail', 'uses' => 'MailController@sendMail']);
 
-Route::get('/tuyen-dung-chi-tiet.html', function () {
-    return view('frontend.tuyendung-details.index');
-});
+//Route::get('/tuyen-dung-chi-tiet.html', function () {
+//    return view('frontend.tuyendung-details.index');
+//});
 
 Route::get('/tin-tuc/{path}', 'FrontendController@getDetailTinTuc');
 
@@ -93,6 +93,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('sml_admin/post/{id}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']]);
     Route::patch('sml_admin/post/{id}', ['as' => 'post.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']]);
     Route::delete('sml_admin/post/{id}', ['as' => 'post.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']]);
+    //VIDEO
+
+    Route::get('sml_admin/video/{id}/edit', ['as' => 'video.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']]);
+    Route::patch('sml_admin/video/{id}', ['as' => 'video.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']]);
+
 
     //CATEGORY PRODUCT
     Route::get('sml_admin/danh-muc-san-pham', ['as' => 'categoryproduct.index', 'uses' => 'CategoryItemController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']])->defaults('type','categoryproduct');

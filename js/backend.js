@@ -261,6 +261,36 @@ $('#btnBrowseMore').click(function () {
         'directories=0, resizable=1, scrollbars=0, width=800, height=600'
     );
 });
+$('#btnVideoMore').click(function () {
+    var inputVideo = '<div class="form-group row">'
+        + '<div class="col-md-11">'
+        + '<input placeholder="Tên" class="form-control" name="video-choose[]" type="text">'
+        + '</div>'
+        + '<div class="col-md-1 delete-input">'
+        + '<span>x</span>'
+        + '</div>'
+        + '</div>'
+    $('.group-input').append(inputVideo);
+    $('.delete-input span').click(function(){
+        $(this).parent().parent().remove();
+        // alert('delete');
+    });
+});
+$('.delete-input span').click(function(){
+    $(this).parent().parent().remove();
+    // alert('delete');
+});
+$('input[type=radio]').change( function() {
+    var type=$(this).val();
+    if(type==1){
+        $('.import-image').css('display','block');
+        $('.import-video').css('display','none');
+    }else{
+        $('.import-image').css('display','none');
+        $('.import-video').css('display','block');
+    }
+});
+
 // integratedCKEDITOR('description-post',height=200);
 integratedCKEDITOR('content-post',height=800);
 // integratedCKEDITOR('seo-description-post',height=200);
@@ -340,6 +370,9 @@ $('select[name=select-district]').change(function () {
             }
         }
     });
+});
+$('textarea[name=map]').change(function(){
+    $('.show-map').html($(this).val());
 });
 
 

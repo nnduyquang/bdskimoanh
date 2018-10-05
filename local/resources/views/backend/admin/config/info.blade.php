@@ -11,6 +11,18 @@
             {!! Form::text('config-phone', $cauhinhs['config-phone'], array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
+    <div class=" col-md-12">
+        <div class="form-group">
+            <label style="font-weight: bold">Số Điện Thoại 1:</label>
+            {!! Form::text('config-phone-1', $cauhinhs['config-phone-1'], array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class=" col-md-12">
+        <div class="form-group">
+            <label style="font-weight: bold">Số Điện Thoại 2:</label>
+            {!! Form::text('config-phone-2', $cauhinhs['config-phone-2'], array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
 
     <div class=" col-md-12">
         <div class="form-group">

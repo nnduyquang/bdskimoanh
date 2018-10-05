@@ -126,13 +126,13 @@
                 </div>
                 <div class="wrap-create-edit">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <strong>Giá: </strong>
-                                {!! Form::text('price',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                                {!! Form::text('price',null, array('placeholder' => 'Giá','class' => 'form-control')) !!}
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <strong>ĐVT: </strong>
                                 <select name="select-unit" class="form-control">
@@ -144,10 +144,16 @@
                             </div>
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <strong>Diện Tích(m2): </strong>
-                                {!! Form::text('area',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                                <strong>Diện Tích(m2) </strong>
+                                {!! Form::text('area',null, array('placeholder' => 'Diện Tích','class' => 'form-control')) !!}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <strong>Số Phòng </strong>
+                                {!! Form::text('num_bed',null, array('placeholder' => 'Số Phòng','class' => 'form-control')) !!}
                             </div>
                         </div>
                     </div>
@@ -155,8 +161,21 @@
             </div>
         </div>
         <div class="col-md-12 p-0">
-            <strong>Mô Tả Sản Phẩm:</strong>
-            {!! Form::textarea('content',null,array('placeholder' => '','id'=>'content-page','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+            <div class="wrap-create-edit">
+                <strong class="text-title-left">Bản Đồ</strong>
+                {!! Form::textarea('map',null,array('placeholder' => '','id'=>'','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                <div class="show-map">
+                    @if(!is_null($product->map))
+                        {!! $product->map !!}
+                    @endif
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 p-0">
+            <div class="wrap-create-edit">
+                <strong class="text-title-left">Mô Tả Sản Phẩm</strong>
+                {!! Form::textarea('content',null,array('placeholder' => '','id'=>'content-page','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+            </div>
 
         </div>
         <hr>

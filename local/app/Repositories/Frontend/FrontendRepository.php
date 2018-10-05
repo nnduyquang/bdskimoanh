@@ -3,6 +3,7 @@
 namespace App\Repositories\Frontend;
 
 
+use App\Config;
 use App\Direction;
 use App\Location;
 use App\Menu;
@@ -33,8 +34,11 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $data = [];
         $post = new Post();
+        $config = new Config();
         $posts = $post->getAllPostSidebar();
+        $tuyendungs=$post->getAllPostByCategory(4);
         $data['posts'] = $posts;
+        $data['tuyendungs']=$tuyendungs;
         $product = new Product();
         $products = $product->getAllProductsOrderBy('order');
         $data['products'] = $products;
@@ -42,7 +46,20 @@ class FrontendRepository implements FrontendRepositoryInterface
         $direction = new Direction();
         $data['cities'] = $location->getAllCities();
         $data['directions'] = $direction->getAllDirection();
-        $data['area']=$location->getListLocationByArrayId([17,2,4,24,23,8]);
+        $data['area'] = $location->getListLocationByArrayId([17, 2, 4, 24, 23, 8]);
+        $dataConfig = $config->getConfigByListName(['config-phone', 'config-phone-1', 'config-phone-2', 'config-company-name', 'config-contact']);
+        foreach ($dataConfig as $key => $item) {
+            if ($item->name == 'config-phone')
+                $data['hotline'] = $item->content;
+            if ($item->name == 'config-phone-1')
+                $data['phone1'] = $item->content;
+            if ($item->name == 'config-phone-2')
+                $data['phone2'] = $item->content;
+            if ($item->name == 'config-company-name')
+                $data['namecompany'] = $item->content;
+            if ($item->name == 'config-contact')
+                $data['contact'] = $item->content;
+        }
         return $data;
     }
 
@@ -82,8 +99,8 @@ class FrontendRepository implements FrontendRepositoryInterface
         $data = [];
         $product = new Product();
         $location = new Location();
-        $data['product']=$product->findProductByPath($path);
-        $data['other']=$product->findProductOther($data['product']->id);
+        $data['product'] = $product->findProductByPath($path);
+        $data['other'] = $product->findProductOther($data['product']->id);
         foreach ($data['other'] as $key => $item) {
             $item->stringLocation = $location->getStringLocatationById($item->location_id);
         }
@@ -117,7 +134,7 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $product = new Product();
         $location = new Location();
-        $products=$product->searchProduct($request);
+        $products = $product->searchProduct($request);
         foreach ($products as $key => $item) {
             $item->stringLocation = $location->getStringLocatationById($item->location_id);
         }
@@ -134,11 +151,11 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $product = new Product();
         $location = new Location();
-        $diadiem=$location->getLocationByPath($path);
+        $diadiem = $location->getLocationByPath($path);
         $locationChildID = $location->getAllChildAndDeeperById($diadiem->id);
         $finalId = $locationChildID->pluck('id');
         $finalId->push((int)$diadiem->id);
-        $products =  $product->whereIn('location_id', $finalId)->get();
+        $products = $product->whereIn('location_id', $finalId)->get();
         foreach ($products as $key => $item) {
             $item->stringLocation = $location->getStringLocatationById($item->location_id);
         }
@@ -153,10 +170,10 @@ class FrontendRepository implements FrontendRepositoryInterface
 
     public function getDetailTuyenDung($path)
     {
-        $data=[];
+        $data = [];
         $post = new Post();
-        $data['post']=$post->findPostByPath($path);
-        $data['other']=$post->findPostOther($data['post']->id);
+        $data['post'] = $post->findPostByPath($path);
+        $data['other'] = $post->findPostOther($data['post']->id);
         return $data;
     }
 

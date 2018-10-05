@@ -107,10 +107,8 @@ $(document).ready(function () {
                     $("input[name='name']").val("");
                     $("input[name='email']").val("");
                     $("input[name='phone-contact']").val("");
-                    $("input[name='type']").val("");
-                    $("input[name='date']").val("");
-                    $("input[name='number']").val("");
-                    $("textarea[name='content']").val("");
+                    $("input[name='project']").val("");
+                    $("textarea[name='contentmail']").val("");
                 }
                 else {
                     $('.loadingSending').css('display', 'none');
