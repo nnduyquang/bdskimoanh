@@ -8,6 +8,6 @@
     }
 </style>
 
-<div class="container-fluid" id="p_banner" style="background-image:url({{URL::asset('images/bg/project-slider.png')}});">
+<div class="container-fluid" id="p_banner" style="background-image:url({{URL::asset($data->image)}});">
 
 </div>

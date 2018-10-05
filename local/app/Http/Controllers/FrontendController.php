@@ -73,6 +73,10 @@ class FrontendController extends Controller
         $other=$data['other'];
         return view('frontend.tuyendung-details.index', compact('post','other'));
     }
+    public function getVideo(){
+        $data = $this->frontendRepository->getVideo();
+        return view('frontend.videos.index', compact('data'));
+    }
 
 }
 

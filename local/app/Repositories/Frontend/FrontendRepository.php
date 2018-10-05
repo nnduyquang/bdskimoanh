@@ -177,5 +177,12 @@ class FrontendRepository implements FrontendRepositoryInterface
         return $data;
     }
 
+    public function getVideo()
+    {
+        $post = new Post();
+        $page=$post->findPostByPath('video');
+        return $page;
+    }
+
 
 }

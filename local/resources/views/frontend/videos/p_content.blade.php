@@ -50,35 +50,40 @@
             <div class="col-12 text-center mb-4"><p style="font-size: 18px">
                     Videos về hoạt dộng và các dự án của Kim Oanh Group.
                 </p></div>
-            @for ($i = 0; $i < 8; $i++)
+            @if(!is_null($data->videos))
+                @php
 
-                <div class="col-md-3 text-center mb-3">
-                    <div class="youtube-cover">
-                        <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1"
-                                src="https://www.youtube.com/embed/dShq3wqgzII" frameborder="0"
-                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        {{--<p>thông tin tiệc cưới hera</p>--}}
+                    $listVideos=explode(';',$data->videos);
+
+                @endphp
+                @foreach($listVideos as $key2=>$item2)
+
+                    <div class="col-md-3 text-center mb-3">
+                        <div class="youtube-cover">
+                            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1"
+                                    src="{{$item2}}" frameborder="0"
+                                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            {{--<p>thông tin tiệc cưới hera</p>--}}
+                        </div>
+                        <div onclick="revealVideo('video','youtube','{{$item2}}')"
+                             class="cover"
+                             style="position: absolute;z-index: 11;width: 100%;height: 100%;top: 0;left: 0;cursor: pointer"></div>
                     </div>
-                    <div onclick="revealVideo('video','youtube','https://www.youtube.com/embed/dShq3wqgzII')"
-                         class="cover"
-                         style="position: absolute;z-index: 11;width: 100%;height: 100%;top: 0;left: 0;cursor: pointer"></div>
-                </div>
+                @endforeach
 
-                <div class="col-md-3 text-center mb-3">
-                    <div class="youtube-cover">
-                        <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1"
-                                src="https://www.youtube.com/embed/fsi1YSKYFdo" frameborder="0"
-                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        {{--<p>thông tin tiệc cưới hera</p>--}}
-                    </div>
-                    <div onclick="revealVideo('video','youtube','https://www.youtube.com/embed/fsi1YSKYFdo')"
-                         class="cover"
-                         style="position: absolute;z-index: 11;width: 100%;height: 100%;top: 0;left: 0;cursor: pointer"></div>
-                </div>
+                    {{--<div class="col-md-3 text-center mb-3">--}}
+                        {{--<div class="youtube-cover">--}}
+                            {{--<iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1"--}}
+                                    {{--src="https://www.youtube.com/embed/fsi1YSKYFdo" frameborder="0"--}}
+                                    {{--allow="autoplay; encrypted-media" allowfullscreen></iframe>--}}
+                            {{--<p>thông tin tiệc cưới hera</p>--}}
+                        {{--</div>--}}
+                        {{--<div onclick="revealVideo('video','youtube','https://www.youtube.com/embed/fsi1YSKYFdo')"--}}
+                             {{--class="cover"--}}
+                             {{--style="position: absolute;z-index: 11;width: 100%;height: 100%;top: 0;left: 0;cursor: pointer"></div>--}}
+                    {{--</div>--}}
 
-
-
-            @endfor
+            @endif
         </div>
     </div>
 </div>

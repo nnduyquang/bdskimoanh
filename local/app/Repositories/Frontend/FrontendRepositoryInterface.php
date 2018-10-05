@@ -32,4 +32,6 @@ interface FrontendRepositoryInterface
     public function getAllTuyenDung();
 
     public function getDetailTuyenDung($path);
+
+    public function getVideo();
 }
