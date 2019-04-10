@@ -124,7 +124,7 @@ class Product extends Model
 
     public function getAllProductsOrderBy($order)
     {
-        return $this->where('is_active', ACTIVE)->orderBy($order)->get();
+        return $this->where('is_active', ACTIVE)->orderBy($order,'DESC')->get();
     }
 
     public function findProductByPath($path)

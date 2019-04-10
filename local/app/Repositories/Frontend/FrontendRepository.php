@@ -21,7 +21,7 @@ class FrontendRepository implements FrontendRepositoryInterface
         $data['cities'] = $location->getAllCities();
         $data['directions'] = $direction->getAllDirection();
         $product = new Product();
-        $products = $product->getAllProductsOrderBy('order');
+        $products = $product->getAllProductsOrderBy('created_at');
         foreach ($products as $key => $item) {
             $item->stringLocation = $location->getStringLocatationById($item->location_id);
         }
@@ -40,7 +40,7 @@ class FrontendRepository implements FrontendRepositoryInterface
         $data['posts'] = $posts;
         $data['tuyendungs']=$tuyendungs;
         $product = new Product();
-        $products = $product->getAllProductsOrderBy('order');
+        $products = $product->getAllProductsOrderBy('created_at');
         $data['products'] = $products;
         $location = new Location();
         $direction = new Direction();

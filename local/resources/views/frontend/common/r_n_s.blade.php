@@ -194,6 +194,6 @@
 
         @include('frontend.common.menu-r.mnr_1')
         @include('frontend.common.menu-r.mnr_2')
-
+        @include('frontend.common.menu-r.mnr_4')
     </div>
 </div>

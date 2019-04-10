@@ -7,8 +7,8 @@
         background-size: cover;
         background-repeat: no-repeat;
         text-align: center;
-        padding-top: 96px;
-        padding-bottom: 106px;
+        padding-top: 120px;
+        padding-bottom: 306px;
         margin-top: 10px;
 
     }

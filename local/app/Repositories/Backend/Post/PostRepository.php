@@ -62,6 +62,9 @@ class PostRepository extends EloquentRepository implements PostRepositoryInterfa
         $result = $this->update($id, $parameters->all());
         $result->seos->update($parameters->all());
         $syncData = array();
+        foreach ($parameters['list_category_id'] as $key => $item) {
+            $syncData[$item] = array('type' => CATEGORY_POST);
+        }
         $result->categoryitems(CATEGORY_POST)->sync($syncData);
         return $data;
     }

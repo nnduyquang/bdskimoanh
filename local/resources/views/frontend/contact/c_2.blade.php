@@ -21,6 +21,7 @@
                     <p>{{$listFrontEndInfo['phone1']}}</p>
                     <p>{{$listFrontEndInfo['phone2']}}</p>
                 </div>
+                @include('frontend.common.menu-r.mnr_4')
 
 
             </div>

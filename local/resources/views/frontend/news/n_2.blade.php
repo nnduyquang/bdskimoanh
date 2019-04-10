@@ -29,7 +29,7 @@
 
                         <div class="tintuc-sortcontent">
                             <p>
-                                {!! $item->description !!}
+                                {!! loai_bo_html_tag($item->description) !!}
                             </p>
                         </div>
 
